@@ -1,4 +1,5 @@
 'use client'
+import { Button } from "@/components/ui/button"
 import {
   Card,
  
@@ -9,19 +10,29 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import Image from "next/image"
+import { useRouter } from "next/navigation";
+import { useRef } from "react";
+import FirstPage from "./FirstPage";
 
 export default function IntroPage(){
+const sectionOneRef = useRef<HTMLDivElement | null>(null);
+const scrollToPage = () => {
+    if (sectionOneRef.current) {
+      sectionOneRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
     return(
-        <div className="grid grid-cols-2 h-screen gap-4">
+        <>  
+         <div className="grid grid-cols-2 h-screen gap-4 mt-0">
             <div className="flex justify-center items-center m-4">
                 <Image
-                src="/intro.svg"
+                src="assets/icons/intro.svg"
                 height={600}
                 width={600}
                 alt='intro-illustration'
                 />
            </div>
-           <div className="flex justify-center items-center">
+           <div className="flex justify-center items-center mt-0">
             <Card className="bg-transparent shadow-2xl m-10">
             <CardHeader>
                 <CardTitle className="text-5xl font-sans ">Hello.</CardTitle>                
@@ -38,8 +49,13 @@ export default function IntroPage(){
                 </p>
             </CardContent>
             </Card>
-           </div>
-           
+           </div>      
         </div>
+        
+        <div ref={sectionOneRef} className="w-full">
+        <FirstPage />
+      </div>
+        </>
+        
     )
 }

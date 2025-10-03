@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from "react";
 import {  Transition } from '@headlessui/react'
-import IntroPage from "./IntroPage/IntroPage";
+import IntroPage from "./IntroPage";
 
 export default function Home() {
    const fullText = "Marija Tashevska";
