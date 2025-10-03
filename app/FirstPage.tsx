@@ -1,10 +1,12 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import SecondPage from "./SecondPage";
 
 
 export default function FirstPage(){
     return(
-            <div className="grid grid-cols-2"> 
+        <>
+            <div className="grid grid-cols-2 gap-4 mb-20"> 
                
                 <div className="flex justify-center items-center mt-0">
                     <Card className="bg-transparent shadow-2xl m-10 w-[500px] h-[auto]">
@@ -43,5 +45,7 @@ export default function FirstPage(){
                     /></div>
                 </div>
             </div>
+            <SecondPage/>
+        </>
     )
 }

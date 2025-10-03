@@ -15,12 +15,6 @@ import { useRef } from "react";
 import FirstPage from "./FirstPage";
 
 export default function IntroPage(){
-const sectionOneRef = useRef<HTMLDivElement | null>(null);
-const scrollToPage = () => {
-    if (sectionOneRef.current) {
-      sectionOneRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
     return(
         <>  
          <div className="grid grid-cols-2 h-screen gap-4 mt-0">
@@ -52,9 +46,7 @@ const scrollToPage = () => {
            </div>      
         </div>
         
-        <div ref={sectionOneRef} className="w-full">
-        <FirstPage />
-      </div>
+        <FirstPage/>
         </>
         
     )
