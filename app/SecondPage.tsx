@@ -2,13 +2,10 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import ProjectsPage from "./ProjectsPage";
 
-
-
 export default function SecondPage(){
     return(
         <>
            <div className="flex justify-center items-center gap-4 mb-20"> 
-               
                 <div className="flex justify-center items-center mt-0">
                     <Card className="bg-transparent shadow-2xl m-10 w-[auto] h-[auto]">
                     <CardHeader>
@@ -42,7 +39,7 @@ export default function SecondPage(){
                     </Card>
                 </div>   
             </div>
-            
+            <ProjectsPage/>
         </>
     )
 }
