@@ -1,9 +1,16 @@
 'use client'
+import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 export default function ProjectsPage(){
+  const router=useRouter();
+  const widgets = () => {
+    router.push('/widgets')
+  };
     return(
         <>
         <h1 className="text-6xl font-sans m-10 text-center md:text-left">Projects.</h1>
@@ -93,7 +100,36 @@ export default function ProjectsPage(){
                        </p>
                     </CardContent>
                     </Card>
-
+                    
+                    <Card className="bg-transparent shadow-2xl w-[500px] h-[auto] m-5">
+                    <CardTitle className="m-5 mb-0">
+                       <h1 className="text-4xl">Widgets.</h1>
+                    </CardTitle>
+                    <CardHeader>
+                     
+                      <Link href="https://github.com/marijaT13/projects" className="text-blue-700">Check out my repository</Link>
+                      <Button onClick={widgets} type="button">Click Me</Button>
+                    </CardHeader>
+                    <CardContent className="font-sans">
+                       <p>
+                        These projects are primarily experimental. With them, 
+                        I aimed to deepen my understanding of React, Vite, and TypeScript.<br/>
+                        I found that the best way to learn was by building small, practical 
+                        widgets and mini-projects with easy implementation.<br/>
+                        Through these projects, I was able to:
+                       
+                        <li>Develop reusable React components and understand component 
+                          lifecycle management,</li>
+                        <li>
+                          apply TypeScript for type safety and maintainable code and
+                        </li>
+                        <li>
+                         integrate simple tools and libraries to enhance functionality 
+                         and user experience.
+                        </li>
+                       </p>
+                    </CardContent>
+                    </Card>
                 </div>
                    
             </div>
