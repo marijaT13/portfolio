@@ -30,12 +30,12 @@ export default function ProjectsPage(){
                         As my bachelor's thesis, I aimed to showcase my existing skills, 
                         acquire new ones, and challenge myself to create a fully functional, 
                         visually appealing website within a limited timeframe.<br/>
-                        With that in mind, I
+                        With that in mind, I</p>
                         <li>Strengthened my React and Next.js skills through hands-on development,</li> 
                         <li>learnt how to implement
                         Shadcn components, enabling faster development and a cohesive design system and</li> 
                         <li>successfully implemented OTP authentication with Twilio and Appwrite's messaging services.</li>
-                       </p>
+                       
                     </CardContent>
                     </Card>
 
