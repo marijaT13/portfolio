@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useRef, useState } from "react";
-import {  Transition } from '@headlessui/react'
 import IntroPage from "./IntroPage";
 
 export default function Home() {
@@ -51,7 +50,7 @@ const sectionRef = useRef<HTMLDivElement | null>(null);
       
           <button
             onClick={scrollToIntro}
-            className="animate-bounce absolute bottom-8 
+            className="main-btn animate-bounce absolute bottom-8 
             left-1/2 
             -translate-x-1/2"
             aria-label="Scroll Down"
