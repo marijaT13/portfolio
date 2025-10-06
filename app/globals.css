@@ -132,3 +132,60 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   border: none;
   background: none;
 }
+
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+b {
+  position: relative;
+  line-height: 100%;
+  display: inline-block;
+  font-weight: 400;
+}
+
+/* Helper for animating the stroke */
+
+b svg{
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 40%;
+  animation: draw 6s linear forwards;
+  stroke-dasharray:1000;
+  stroke-dashoffset: 1000;
+   animation-delay: 1s;
+  /*  
+  */
+}
+
+
+p b:nth-of-type(2) svg {
+  margin-top: -60px;
+  width:70%;
+  right:10%; 
+  animation-delay: 2s;
+}
+
+.signature {
+  position: relative;
+  line-height: 100%;
+  display: inline-block;
+  font-weight: 400;
+}
+
+
+.signature svg {
+ 
+  margin-top:40px; /* adjust as needed */
+  width: 100%; /* optional if you want it to scale with the name */
+  animation: draw 1s ease-in forwards;
+  transform: translate3d(-50%, -50%, 0);
+ animation-delay: 3s;
+  stroke-dasharray:1000;
+  stroke-dashoffset: 1000;
+}
