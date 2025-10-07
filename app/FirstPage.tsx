@@ -25,25 +25,29 @@ export default function FirstPage(){
                         </p>
                     </CardContent>
                     </Card>
-                </div>   
-                <div className="flex justify-center items-center m-4 relative">
-                    <div className="absolute top-2 left-20">
-                    <Image
-                    src="/assets/images/frame.png"
-                    height={200}
-                    width={200}
-                    alt='github'
-                    className="m-3"
-                    /></div>
-                    <div className="absolute bottom-1 right-20">
-                    <Image
-                    src="/assets/images/frame1.png"
-                    height={200}
-                    width={200}
-                    alt='linkedin'
-                    className="m-3"
-                    /></div>
-                </div>
+                
+                </div>     
+                <div className="flex flex-col md:flex-col justify-center items-center gap-6 md:gap-10 lg:gap-16 mr-10 md:mr-20 lg:mr-29">
+                    {/* LinkedIn QR */}
+                    <div className="flex flex-col items-center ml-30">
+                        <Image
+                        src="/assets/images/frame11.png"
+                        width={250}
+                        height={250}
+                        alt="LinkedIn QR"
+                        />
+                    </div>
+
+                    {/* GitHub QR */}
+                    <div className="flex flex-col items-center mr-30 md:size-[340px] md:mr-10">
+                        <Image
+                        src="/assets/images/framee.png"
+                        width={320}
+                        height={320}
+                        alt="GitHub QR"
+                        />
+                    </div>
+                    </div>                     
             </div>
             <SecondPage/>
         </>
