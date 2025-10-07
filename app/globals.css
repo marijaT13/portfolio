@@ -215,3 +215,29 @@ p b:nth-of-type(2) svg {
   stroke-dasharray:1000;
   stroke-dashoffset: 1000;
 }
+
+
+.outro svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: none;
+}
+
+.outro-section.active svg path {
+  animation: draw 2.5s ease forwards;
+}
+
+
+
+.outro {
+  position: relative;
+  display: inline-block;
+  line-height: 100%;
+}
+
+.outro svg {
+  margin-top: -75px;
+  margin-right: 20px;
+  width: 200%;
+  transform: translate3d(-50%, -50%, 0);
+}

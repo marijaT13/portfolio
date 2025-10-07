@@ -12,7 +12,7 @@ export default function WidgetsPage(){
     const Clock = dynamic(() => import("@/components/widget/clocks"), { ssr: false });
     const router = useRouter();
     const goBack =() =>{
-        router.push('/');
+        router.push('/#ProjectsPage');
     }
     return (
         <>
