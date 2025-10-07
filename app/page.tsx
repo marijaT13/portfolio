@@ -4,9 +4,7 @@ import IntroPage from "./IntroPage";
 
 export default function Home() {
    const fullText = "Marija Tashevska";
-   const [displayedText, setDisplayedText] = useState("");
    const [showName, setShowName] = useState(false);
-   const [typingFinished, setTypingFinished] = useState(false);
 const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -19,16 +17,14 @@ const sectionRef = useRef<HTMLDivElement | null>(null);
     
       let index = 0;
       const interval = setInterval(() => {
-      setDisplayedText(fullText.slice(0, index + 1));
       index++;
      if (index === fullText.length) {
         clearInterval(interval);
-        setTypingFinished(true); // typing done
       }
     }, 150);
 
     return () => clearInterval(interval);
-  }, [showName]);
+  }, []);
 
  const scrollToIntro = () => {
     if (sectionRef.current) {
@@ -74,7 +70,7 @@ const sectionRef = useRef<HTMLDivElement | null>(null);
         
           <button
             onClick={scrollToIntro}
-            className="main-btn animate-bounce absolute bottom-8 
+            className="smooth-scroll main-btn animate-bounce absolute bottom-8 
             left-1/2 
             -translate-x-1/2"
             aria-label="Scroll Down"
