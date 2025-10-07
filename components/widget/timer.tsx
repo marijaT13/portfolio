@@ -109,10 +109,10 @@ const Timer = () => {
       </div>
 
       <div className="bottom-buttons">
-        <button onClick={handleSetTime}>Set</button>
-        <button onClick={handleStart} disabled={isRunning}>Start</button>
-        <button onClick={handlePause} disabled={!isRunning}>Stop</button>
-        <button onClick={handleReset}>Reset</button>
+        <button onClick={handleSetTime} className="set-btn">Set</button>
+        <button onClick={handleStart} disabled={isRunning} className="start-btn">Start</button>
+        <button onClick={handlePause} disabled={!isRunning} className="pause-btn">Stop</button>
+        <button onClick={handleReset} className="reset-btn">Reset</button>
       </div>
     </div>
   );

@@ -10,8 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import Image from "next/image"
-import { useRouter } from "next/navigation";
-import { useRef } from "react";
+
 import FirstPage from "./FirstPage";
 
 export default function IntroPage(){

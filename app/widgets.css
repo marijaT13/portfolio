@@ -84,7 +84,11 @@
   box-shadow: 0 0 5px hsla(323, 100%, 50%, 0.2);
   z-index: 9;
 }
-button{
+
+.start-btn,
+.set-btn,
+.pause-btn,
+.reset-btn{
     background-color: #ffd4f1;
     padding: 10px;
     box-shadow: 0 0 6px hsla(323, 100%, 27%, 0.2);
@@ -92,11 +96,25 @@ button{
     border: #b80000;
     font-size: 15px;
     color:#b80000;
+    
 }
-button:hover{
-  background-image: radial-gradient(circle, #b80000 18%, #ffa4dc 77%);  background-repeat: no-repeat; /* Prevent the background from repeating */
-  color: #ffd4f1;
-}
+.start-btn:hover{
+        background-image: radial-gradient(circle, #b80000 18%, #ffa4dc 77%);  background-repeat: no-repeat; /* Prevent the background from repeating */
+        color: #ffd4f1;
+    } 
+.set-btn:hover{
+        background-image: radial-gradient(circle, #b80000 18%, #ffa4dc 77%);  background-repeat: no-repeat; /* Prevent the background from repeating */
+        color: #ffd4f1;
+    } 
+.pause-btn:hover{
+        background-image: radial-gradient(circle, #b80000 18%, #ffa4dc 77%);  background-repeat: no-repeat; /* Prevent the background from repeating */
+        color: #ffd4f1;
+    }
+.reset-btn:hover{
+        background-image: radial-gradient(circle, #b80000 18%, #ffa4dc 77%);  background-repeat: no-repeat; /* Prevent the background from repeating */
+        color: #ffd4f1;
+    }
+
 /* keycode */
 .container-keycode {
     width:400px;

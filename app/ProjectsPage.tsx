@@ -115,7 +115,7 @@ export default function ProjectsPage(){
 
   return (
     <>
-      <h1 className="text-6xl font-sans text-center md:text-left m-10 mt-0">Projects.</h1>
+      <h1 className="text-6xl font-sans lg:text-center md:text-left m-10 mt-0">Projects.</h1>
         <div className="relative flex justify-center items-center min-h-screen">
           <Swiper
             modules={[Navigation, EffectCoverflow]}
