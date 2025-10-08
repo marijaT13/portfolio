@@ -1,6 +1,7 @@
 'use client'
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -44,25 +45,22 @@ export default function OutroPage(){
                 </b>
              </h1>
 
-             <div className="flex flex-col sm:flex-row mt-10 gap-20 justify-center items-center">
+              <div className="flex flex-col sm:flex-row mt-20 gap-20 justify-center items-center">
                 <Card className="text-center bg-white/40 border-none  shadow-xl p-2">            
                     <CardContent className="p-0">
                     <Link href='mailto:marijatashevska222@gmail.com' 
-                        className="text-center underline text-blue-800 hover:text-blue-500">
-                        Email</Link>
+                        className="text-xl text-blue-800 hover:text-blue-500  justify-center flex gap-2">
+                          <Image
+                          src="/assets/icons/envelope-open.svg"
+                          alt="meil"
+                          width={26}
+                          height={26}
+                          />Email
+                        </Link>
                             <p></p>
                     </CardContent>
                 </Card>
-
-                <Card className=" text-center bg-white/40 border-none  shadow-xl p-2">            
-                    <CardContent className="p-0">
-                    <Link href='tel:+38975978667' 
-                        className="text-center underline text-red-900 hover:text-red-600">
-                        Phone Number</Link>
-                        <p></p>
-                    </CardContent>
-                </Card>
-            </div>
+            </div> 
       
       </main>
 
@@ -79,9 +77,7 @@ export default function OutroPage(){
           >
             <Mail className="w-5 h-5" />
           </Link>
-          <Link href="tel:+38975978667" className="hover:text-red-400">
-            <Phone className="w-5 h-5" />
-          </Link>
+          
           <Link
             href="https://github.com/marijaT13"
             target="_blank"

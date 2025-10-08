@@ -242,15 +242,45 @@ p b:nth-of-type(2) svg {
   transform: translate3d(-50%, -50%, 0);
 }
 
+
 .swiper-button-prev,
 .swiper-button-next {
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
-  color: #e7d29e; /* or your preferred color */
+  color: #c4b6b6 !important; /* or your preferred color */
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-size: 28px;
-  font-weight: light;
+
+
+#ProjectsPage .swiper {
+  position: relative;
+  overflow: hidden;
+  
+}
+
+/* Gradient overlay to fade out left and right edges */
+#ProjectsPage .swiper::before,
+#ProjectsPage .swiper::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  width: 140px; /* adjust width for how much fade you want */
+  height: 77%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#ProjectsPage .swiper::before {
+  left: 0;
+  background: linear-gradient(to right, #e0d6d6, transparent);
+}
+
+#ProjectsPage .swiper::after {
+  right: 0;
+  background: linear-gradient(to left, #e0d6d6, transparent);
+}
+#ProjectsPage .swiper-button-prev,
+#ProjectsPage .swiper-button-next {
+  z-index: 20 !important; /* higher than fade overlay */
+  pointer-events: all;
 }
