@@ -241,3 +241,16 @@ p b:nth-of-type(2) svg {
   width: 200%;
   transform: translate3d(-50%, -50%, 0);
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+  color: #e7d29e; /* or your preferred color */
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 28px;
+  font-weight: light;
+}

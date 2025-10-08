@@ -119,11 +119,16 @@ export default function ProjectsPage(){
         <div className="relative flex justify-center items-center min-h-screen mt-0">
           <Swiper
             modules={[Navigation, EffectCoverflow]}
-            navigation
+            navigation = {{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
             loop={true}
-            centeredSlides={true}
-            slidesPerView={2.8} // fractional value centers perfectly
+            centerInsufficientSlides={true}
+            centeredSlidesBounds={true}
+            slidesPerView={3} // fractional value centers perfectly
             grabCursor={true}
+            initialSlide={3}
             effect="coverflow"
             coverflowEffect={{
               rotate: 0,
@@ -153,6 +158,9 @@ export default function ProjectsPage(){
                 </Card>
               </SwiperSlide>
             ))}
+            <div className="swiper-button-prev !text-red-500 !scale-80"></div> 
+            <div className="swiper-button-next !text-red-500 !scale-80"></div>
+            
           </Swiper>
       </div>
 
