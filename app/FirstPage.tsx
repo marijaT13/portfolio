@@ -17,11 +17,13 @@ export default function FirstPage(){
                         <p className="text-gray-600 italic">October 2021 - September 2025</p>
                         <p className="text-gray-900 font-bold">FIKT</p>
                         <br/>
-                        <p>I am a college graduate from Computer Science and Communications Engineering.<br/> 
+                        <p>I am a college graduate from the Faculty of Informaton and Communicational Technologies.<br/> 
                         Studied a wide range of ICT disciplines including programming, networking, database 
                         systems, how to implement them and telecommunications. <br/>
-                        I had hands-on experience with all this disciplines through academic and project work.<br/>  
-                        
+                        Through both academic and project-based work, I gained hands-on experience in designing, 
+                        developing, and implementing technology-driven solutions.<br/>  
+                        This combination of theoretical knowledge and practical application has strengthened my ability 
+                        to analyze problems, think critically, and deliver efficient digital solutions.
                         </p>
                     </CardContent>
                     </Card>

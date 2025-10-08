@@ -17,8 +17,9 @@ export default function SecondPage(){
                         and software development methodologies.  <br/> 
                         This allowed me to develop a strong foundation in multiple 
                         technologies and the ability to quickly adapt to new ones.<br/>
-                        While I have worked with various tools and frameworks over time,
-                        my preferred tech stack includes:
+                        Although I’ve experimented with many tools and frameworks, the following 
+                        tech stack has become my go-to for building efficient and enjoyable 
+                        digital experiences:
                         <br/>
                         <br/>
                         </p>

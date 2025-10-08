@@ -67,15 +67,15 @@ export default function OutroPage(){
       </main>
 
       {/* FOOTER */}
-      <footer className="w-full bg-black text-white py-6 px-4 flex flex-col sm:flex-row items-center justify-between text-sm font-sans">
-        <p className="text-gray-400 mb-4 sm:mb-0 text-center sm:text-left">
+      <footer className="w-full bg-green-900 text-white py-6 px-4 flex flex-col sm:flex-row items-center justify-between text-sm font-sans">
+        <p className="text-gray-300 mb-4 sm:mb-0 text-center sm:text-left">
           © {new Date().getFullYear()} Marija Tashevska — All rights reserved.
         </p>
 
         <div className="flex gap-6 justify-center sm:justify-end">
           <Link
             href="mailto:marijatashevska222@gmail.com"
-            className="hover:text-blue-400"
+            className="hover:text-yellow-400"
           >
             <Mail className="w-5 h-5" />
           </Link>
@@ -92,7 +92,7 @@ export default function OutroPage(){
           <Link
             href="https://www.linkedin.com/in/marija-tashevska-567b1b219"
             target="_blank"
-            className="hover:text-blue-600"
+            className="hover:text-blue-500"
           >
             <Linkedin className="w-5 h-5" />
           </Link>

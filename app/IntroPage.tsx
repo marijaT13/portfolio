@@ -31,12 +31,14 @@ export default function IntroPage(){
                 <CardTitle className="text-5xl font-sans ">Hello.</CardTitle>                
             </CardHeader>
             <CardContent className="font-sans">
-                <p>As a recent graduate in Computer Science and Communications Engineering from Bitola, 
-                I combine my love for technology with a strong passion for creativity and problem-solving. <br/> 
+                <p>With a fresh academic foundation and a curious mind, I merge my love
+                for technology with creativity to craft seamless and visually captivating 
+                digital experiences. <br/> 
                 I enjoy building digital experiences that are not only functional 
                 and seamless but also visually engaging.  <br/> 
-                Outside of coding, I draw inspiration from exploring neighboring countries—visiting museums, 
-                galleries, historic sites, and cafes—which fuels both my creativity and curiosity.<br/>  
+                Outside of coding, I draw inspiration from exploring neighboring countries
+                —visiting museums, galleries, historic sites, cafes and the beautiful nature
+                 and inspirational vistas — which fuels both my creativity and curiosity.<br/>  
                 I thrive on continuous learning, and I’m always eager to take on new challenges 
                 that push me to grow as a developer and as a thinker.<br/>
                 </p>
