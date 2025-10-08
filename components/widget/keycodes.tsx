@@ -33,7 +33,7 @@ export default function KeycodesWidget() {
         key.classList.remove("adjust-text");
       }
 
-      let keyCode = document.createTextNode(e.keyCode.toString());
+      const keyCode = document.createTextNode(e.keyCode.toString());
       let keyPressed = document.createTextNode(e.key);
 
       if (e.keyCode === 32) {

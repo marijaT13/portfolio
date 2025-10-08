@@ -23,15 +23,15 @@ export default function ProjectsPage(){
       img: "/assets/icons/logo.svg",
       description: (
         <>
-          As my bachelor's thesis, I aimed to showcase my existing skills, 
+          As my bachelor&aposs thesis, I aimed to showcase my existing skills, 
           acquire new ones, and challenge myself to create a fully functional, 
           visually appealing website within a limited timeframe.<br/>
           With that in mind, I:
           <br/>
           <ul className="list-disc ml-5 mt-2 text-sm text-black">
-            <li>Strengthened my React and Next.js skills through hands-on development,</li> 
+            <li>Strengthened my React with Next.js skills through hands-on development,</li> 
             <li>learnt how to implement Shadcn components, enabling faster development and a cohesive design system and</li> 
-            <li>successfully implemented OTP authentication with Twilio and Appwrite's messaging services.</li>
+            <li>successfully implemented OTP authentication with Twilio and Appwrite&aposs messaging services.</li>
           </ul>
         </>
       )

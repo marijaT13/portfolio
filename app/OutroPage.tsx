@@ -44,8 +44,8 @@ export default function OutroPage(){
                 </b>
              </h1>
 
-             <div className="flex flex-col sm:flex-row mt-10 gap-8 justify-center items-center">
-                <Card className="text-center bg-transparent border-none  shadow-xl p-2">            
+             <div className="flex flex-col sm:flex-row mt-10 gap-20 justify-center items-center">
+                <Card className="text-center bg-white/40 border-none  shadow-xl p-2">            
                     <CardContent className="p-0">
                     <Link href='mailto:marijatashevska222@gmail.com' 
                         className="text-center underline text-blue-800 hover:text-blue-500">
@@ -54,7 +54,7 @@ export default function OutroPage(){
                     </CardContent>
                 </Card>
 
-                <Card className=" text-center bg-transparent border-none  shadow-xl p-2">            
+                <Card className=" text-center bg-white/40 border-none  shadow-xl p-2">            
                     <CardContent className="p-0">
                     <Link href='tel:+38975978667' 
                         className="text-center underline text-red-900 hover:text-red-600">
