@@ -16,7 +16,7 @@ import FirstPage from "./FirstPage";
 export default function IntroPage(){
     return(
         <>  
-         <div className="grid grid-cols-2 h-screen gap-4 mt-0">
+         <div className="flex flex-col md:grid md:grid-cols-2  justify-center items-center md:h-screen h-auto gap-10 px-6 py-10 mt-0">
             <div className="flex justify-center items-center m-4">
                 <Image
                 src="assets/icons/intro.svg"

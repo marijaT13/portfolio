@@ -284,3 +284,11 @@ p b:nth-of-type(2) svg {
   z-index: 20 !important; /* higher than fade overlay */
   pointer-events: all;
 }
+
+.swiper {
+  height: fit-content !important;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}

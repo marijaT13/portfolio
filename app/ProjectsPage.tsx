@@ -92,7 +92,7 @@ export default function ProjectsPage(){
           Mini React + Vite experiments to deepen TypeScript understanding.
           <br/>
           <ul className="list-disc ml-5 mt-2 text-sm text-black">
-            <li>Developed reusableReact components and understand component 
+            <li>Developed reusable React components and understand component 
             lifecycle management,</li>
             <li>
             apply TypeScript for type safety and maintainable code and
@@ -137,11 +137,11 @@ export default function ProjectsPage(){
               modifier: 2.5,
               slideShadows: false,
             }}
-            className="w-full max-w-5xl"
+            className="w-full max-w-6xl"
           >
           
         {projects.map((p, index) => (
-              <SwiperSlide key={index} className="flex justify-center items-center ">
+              <SwiperSlide key={index} className="flex justify-center items-center">
                 <Card className="bg-transparent backdrop-blur-md shadow-accent-foreground w-[380px] h-[500px] flex flex-col justify-between rounded-2xl">
                   <CardHeader className="flex justify-center p-4">
                     <Image

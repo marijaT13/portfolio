@@ -24,6 +24,8 @@ export default function OutroPage(){
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  
     return(
     <div className="flex flex-col min-h-screen justify-between items-center text-black ">
       <main className="flex flex-col justify-center items-center flex-grow p-4 ">
