@@ -1,4 +1,5 @@
 'use client'
+import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
@@ -27,7 +28,7 @@ export default function OutroPage(){
 
   
     return(
-    <div className="flex flex-col min-h-screen justify-between items-center text-black ">
+    <div className="relative flex flex-col h-screen justify-between items-center text-black mt-70">
       <main className="flex flex-col justify-center items-center flex-grow p-4 ">
         <h1 className="text-6xl sm:text-8xl lg:text-9xl text-center font-sans mb-12 animate-on-scroll">
           <b className="outro block animate-on-scroll outro-section">
@@ -50,16 +51,15 @@ export default function OutroPage(){
               <div className="flex flex-col sm:flex-row mt-20 gap-20 justify-center items-center">
                 <Card className="text-center bg-white/40 border-none  shadow-xl p-2">            
                     <CardContent className="p-0">
-                    <Link href='mailto:marijatashevska222@gmail.com' 
-                        className="text-xl text-blue-800 hover:text-blue-500  justify-center flex gap-2">
-                          <Image
-                          src="/assets/icons/envelope-open.svg"
-                          alt="meil"
-                          width={26}
-                          height={26}
-                          />Email
-                        </Link>
-                            <p></p>
+                    <Button
+                      onClick={() =>
+                        (window.location.href =
+                          "mailto:marijatashevska222@gmail.com")
+                      }
+                      className="bg-transparent text-black hover:bg-green-900/50"
+                    >
+                      Contact Me
+                    </Button>
                     </CardContent>
                 </Card>
             </div> 
@@ -67,12 +67,12 @@ export default function OutroPage(){
       </main>
 
       {/* FOOTER */}
-      <footer className="w-full bg-green-900 text-white py-6 px-4 flex flex-col sm:flex-row items-center justify-between text-sm font-sans">
+      <footer className="absolute bottom-0 left-0 right-0 bg-green-900 text-white py-6 px-9 flex flex-col sm:flex-row items-center justify-between text-sm font-sans">
         <p className="text-gray-300 mb-4 sm:mb-0 text-center sm:text-left">
           © {new Date().getFullYear()} Marija Tashevska — All rights reserved.
         </p>
 
-        <div className="flex gap-6 justify-center sm:justify-end">
+        <div className="flex gap-6 justify-center sm:justify-end ">
           <Link
             href="mailto:marijatashevska222@gmail.com"
             className="hover:text-yellow-400"

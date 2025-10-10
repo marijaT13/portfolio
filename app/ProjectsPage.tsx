@@ -114,35 +114,58 @@ export default function ProjectsPage(){
   ];
 
   return (
-    <div id="ProjectsPage">
-      <h1 className="text-6xl font-sans lg:text-center md:text-left m-10 mt-0">Projects.</h1>
-        <div className="relative flex justify-center items-center min-h-screen mt-0">
-          <Swiper
-            modules={[Navigation, EffectCoverflow]}
-            navigation = {{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            loop={true}
-            centerInsufficientSlides={true}
-            centeredSlidesBounds={true}
-            slidesPerView={3} // fractional value centers perfectly
-            grabCursor={true}
-            initialSlide={3}
-            effect="coverflow"
-            coverflowEffect={{
-              rotate: 0,
-              stretch: -90, // negative stretch pulls cards closer evenly
-              depth: 150,
-              modifier: 2.5,
-              slideShadows: false,
-            }}
-            className="w-full max-w-6xl"
-          >
+   <>
+  <div id="ProjectsPage" className="px-10 sm:px-10 lg:px-20 mt-30 ">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans lg:text-center md:text-left mt-10 mb-6">
+      Projects.
+    </h1>
+
+    <div className="relative flex justify-center items-center min-h-[130vh]">
+      <Swiper
+        modules={[Navigation, EffectCoverflow]}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        loop
+        grabCursor
+        initialSlide={3}
+        effect="coverflow"
+        coverflowEffect={{
+          rotate: 0,
+          stretch: -60,
+          depth: 150,
+          modifier: 2.5,
+          slideShadows: false,
+        }}
+        className="w-full max-w-6xl"
+        onResize={(swiper) => swiper.update()} // keep focused slide in view
+        
+        breakpoints={{
+          320: { slidesPerView: 1, spaceBetween: 10 },
+          375: { slidesPerView: 1.05, spaceBetween: 12 },
+          425: { slidesPerView: 1.1, spaceBetween: 14 },
+          480: { slidesPerView: 1.2, spaceBetween: 16 },
+          540: { slidesPerView: 1.4, spaceBetween: 18 },
+          640: { slidesPerView: 1.6, spaceBetween: 20 },
+          768: { slidesPerView: 2.1, spaceBetween: 26 },
+          820: { slidesPerView: 2.3, spaceBetween: 28 },
+          900: { slidesPerView: 2.5, spaceBetween: 30 },
+          1024: { slidesPerView: 3, spaceBetween: 35 },
+          1200: { slidesPerView: 3, spaceBetween: 40 },
+          1400: { slidesPerView: 3.2, spaceBetween: 45 },
+        }}
+      >
           
         {projects.map((p, index) => (
               <SwiperSlide key={index} className="flex justify-center items-center">
-                <Card className="bg-transparent backdrop-blur-md shadow-accent-foreground w-[380px] h-[500px] flex flex-col justify-between rounded-2xl">
+                <Card className="bg-transparent 
+                backdrop-blur-md shadow-lg 
+                w-full max-w-xs sm:max-w-sm 
+                h-[450px] sm:h-[500px] flex flex-col 
+                justify-between rounded-2xl 
+                overflow-hidden
+                transform transition-transform duration-300 hover:scale-105">
                   <CardHeader className="flex justify-center p-4">
                     <Image
                       src={p.img}
@@ -160,11 +183,10 @@ export default function ProjectsPage(){
             ))}
             <div className="swiper-button-prev !scale-80"></div> 
             <div className="swiper-button-next !scale-80"></div>
-            
           </Swiper>
       </div>
-
-      <OutroPage/>
-    </div>
+    </div> 
+   <OutroPage/>
+   </>
   );
 }

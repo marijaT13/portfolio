@@ -5,7 +5,7 @@ import ProjectsPage from "./ProjectsPage";
 export default function SecondPage(){
     return(
         <>
-           <div className="flex justify-center items-center gap-4 mb-20"> 
+           <div className="flex justify-center items-center gap-4 mb-40"> 
                 <div className="flex justify-center items-center mt-0">
                     <Card className="bg-transparent shadow-2xl m-10 w-[auto] h-[auto]">
                     <CardHeader>
@@ -90,8 +90,8 @@ export default function SecondPage(){
                             />
                             
                         </div>
-
-                        <strong>Tools & Platforms:</strong>
+                        <br/>
+                        <strong >Tools & Platforms:</strong>
                         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5 place-items-center">
                             <Image
                             src="/assets/skills/appwrite1.png"

@@ -251,11 +251,9 @@ p b:nth-of-type(2) svg {
 }
 
 
-
 #ProjectsPage .swiper {
   position: relative;
   overflow: hidden;
-  
 }
 
 /* Gradient overlay to fade out left and right edges */
@@ -263,9 +261,10 @@ p b:nth-of-type(2) svg {
 #ProjectsPage .swiper::after {
   content: "";
   position: absolute;
-  top: 60px;
-  width: 140px; /* adjust width for how much fade you want */
-  height: 77%;
+  top: 50%; /* vertically center */
+  transform: translateY(-50%);
+  width: 10%; /* width of fade */
+  height: 90%; /* proportional to card height */
   z-index: 10;
   pointer-events: none;
 }
@@ -279,10 +278,22 @@ p b:nth-of-type(2) svg {
   right: 0;
   background: linear-gradient(to left, #e0d6d6, transparent);
 }
+
+/* Navigation buttons */
 #ProjectsPage .swiper-button-prev,
 #ProjectsPage .swiper-button-next {
-  z-index: 20 !important; /* higher than fade overlay */
-  pointer-events: all;
+  top: 50%; /* vertically center relative to swiper */
+  transform: translateY(-50%);
+  color: #c4b6b6 !important;
+  z-index: 20 !important; /* above fade overlay */
+}
+
+/* Optional: adjust button size on smaller screens */
+@media (max-width: 768px) {
+  #ProjectsPage .swiper-button-prev,
+  #ProjectsPage .swiper-button-next {
+    font-size: 1.5rem; /* smaller buttons */
+  }
 }
 
 .swiper {

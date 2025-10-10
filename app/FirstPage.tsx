@@ -6,7 +6,7 @@ import SecondPage from "./SecondPage";
 export default function FirstPage(){
    return (
   <>
-    <div className="flex flex-col items-center justify-center gap-10 mb-20 px-4">
+    <div className="flex flex-col items-center justify-center gap-10 mb-20 px-4 h-auto">
       {/* Education Card */}
       <Card className="bg-transparent shadow-2xl w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
         <CardHeader>
@@ -31,32 +31,33 @@ export default function FirstPage(){
       </Card>
 
       {/* QR Images Section */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-30 m-10">
+     <div className="flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-30 m-10 mt-20">
         {/* LinkedIn QR */}
-        <div className="flex flex-col items-center sm:mr-0 mr-25">
+        <div className="flex flex-col items-center ml-20">
           <Image
             src="/assets/images/frame11.png"
             width={250}
             height={250}
             alt="LinkedIn QR"
-            className="w-[260px] sm:w-[250px] md:w-[240px] h-auto"
+            className="w-[220px] sm:w-[250px] h-auto"
           />
         </div>
 
         {/* GitHub QR */}
-        <div className="flex flex-col items-center sm:ml-0 ml-40">
+        <div className="flex flex-col items-center mt-8 sm:mt-0 mr-10">
           <Image
             src="/assets/images/framee.png"
-            width={350}
-            height={350}
+            width={240}
+            height={240}
             alt="GitHub QR"
-            className="w-[350px] sm:w-[750px] md:w-[340px] h-auto"
+            className="w-[240px] sm:w-[240px] h-auto"
           />
         </div>
       </div>
+    
     </div>
 
-    <SecondPage />
+   <SecondPage />
   </>
 );
 }
