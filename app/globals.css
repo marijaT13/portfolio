@@ -295,6 +295,12 @@ p b:nth-of-type(2) svg {
     font-size: 1.5rem; /* smaller buttons */
   }
 }
+@media (max-width:768px){
+  .outro svg{
+     margin-top: -35px;
+     width: 180%;
+  }
+}
 
 .swiper {
   height: fit-content !important;
