@@ -153,7 +153,7 @@ export default function ProjectsPage(){
           900: { slidesPerView: 2.5, spaceBetween: 30 },
           1024: { slidesPerView: 3, spaceBetween: 35 },
           1200: { slidesPerView: 3, spaceBetween: 40 },
-          1400: { slidesPerView: 3.2, spaceBetween: 45 },
+          1400: { slidesPerView: 3, spaceBetween: 45 },
         }}
       >
           
