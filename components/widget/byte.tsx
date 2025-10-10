@@ -28,6 +28,11 @@ const Converter: React.FC = () => {
                 id="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
+                onKeyDown={(e)=>{
+                    if(e.key==="Enter"){
+                        convertToBinary();
+                    }
+                }}
                 placeholder="Enter text"/>
                 <textarea 
                 id="binary" 

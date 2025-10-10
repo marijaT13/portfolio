@@ -17,7 +17,7 @@ export default function IntroPage(){
     return(
         <>  
         
-         <div className="flex flex-col md:grid md:grid-cols-2 justify-center items-center h-auto gap-10 px-6 py-20 mt-0">
+         <div className="flex flex-col md:grid md:grid-cols-2 justify-center items-center h-auto gap-10 px-2 py-20 mt-0">
             <div className="flex justify-center items-center m-4">
                 <Image
                 src="assets/icons/intro.svg"

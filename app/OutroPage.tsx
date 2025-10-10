@@ -29,7 +29,7 @@ export default function OutroPage(){
   
     return(
     <div className="relative flex flex-col h-screen justify-between items-center text-black">
-      <main className="flex flex-col justify-center items-center flex-grow p-4 ">
+      <main className="flex flex-col justify-center items-center flex-grow p-4">
         <h1 className="text-6xl sm:text-8xl lg:text-9xl text-center font-sans mb-12 animate-on-scroll">
           <b className="outro block animate-on-scroll outro-section">
                     <svg width="882" height="395" viewBox="0 0 882 395" fill="none" xmlns="http://www.w3.org/2000/svg">

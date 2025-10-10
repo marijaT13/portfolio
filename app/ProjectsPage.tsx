@@ -115,12 +115,12 @@ export default function ProjectsPage(){
 
   return (
    <>
-  <div id="ProjectsPage" className="px-10 sm:px-10 lg:px-20 mt-30 ">
-    <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans lg:text-center md:text-left mt-10 mb-6">
+  <div id="ProjectsPage" className="px-10 sm:px-10 lg:px-20">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans lg:text-center md:text-left mb-26">
       Projects.
     </h1>
 
-    <div className="relative flex justify-center items-center min-h-[130vh]">
+    <div className="relative flex justify-center items-center min-h-[90vh]">
       <Swiper
         modules={[Navigation, EffectCoverflow]}
         navigation={{

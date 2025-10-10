@@ -90,7 +90,7 @@ const Timer = () => {
   return (
     <div className="timer-container">
       <div className="circle">
-        <div className="handelCircle"></div>
+        <div className="handleCircle"></div>
         <div className="timer-wrapper" onClick={handleEditClick}>
           {isEditing ? (
             <input
@@ -98,6 +98,13 @@ const Timer = () => {
               type="text"
               value={timer}
               onChange={handleChange}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSetTime();
+                  handleStart(); // start automatically
+                  inputRef.current?.blur();
+                }
+              }}
               onBlur={handleBlur}
               className="timer-input"
               autoFocus

@@ -31,17 +31,17 @@ export default function WidgetsPage(){
             />
             </h1>
             
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 m-10">
-            <div className="flex justify-center items-center w-full h-screen">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-10 mb-0 mt-0">
+            <div className="flex justify-center items-center w-full h-[70vh] sm:h-screen">
                 <Timer />
             </div>
-            <div className="flex justify-center items-center w-full h-screen ">
+            <div className="flex justify-center items-center w-full h-[70vh] sm:h-screen ">
                 <KeycodesWidget />
             </div>
-            <div className="flex justify-center items-center w-full h-screen">
+            <div className="flex justify-center items-center w-full h-[70vh] sm:h-screen">
                 <Clock />
             </div>
-            <div className="flex justify-center items-center w-full h-screen">
+            <div className="flex justify-center items-center w-full h-[70vh] sm:h-screen">
                 <Converter />
             </div>
         </div>

@@ -117,7 +117,7 @@
 
 /* keycode */
 .container-keycode {
-    width:400px;
+    width:350px;
     height: 480px;
     margin: 90px auto;
     justify-content: center;
@@ -335,7 +335,7 @@
   background-color: #d25637;
   padding: 40px;
   width: fit-content;
-  max-width: 500px;
+  max-width: 380px;
   height: fit-content;
   margin: 100px auto;
   border-radius: 10px;
@@ -362,17 +362,20 @@ h2{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
  }
- .textarea-byte, 
+ .textarea-byte:focus, 
  .byte-input:focus{
   border-color: #8ccd64c5;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   background-color: #8ccd64;
  }
  .byte-btn{
+    display: flex;
+  flex-direction: column;
   background-color: #f6bb1b;
-  padding: 10px;
-  margin-left: 300px;
-  width: 20%;
+  padding: 10px 20px;
+  width: fit-content;
+  align-self: center;
+  cursor: pointer;
   box-shadow: 0 0 6px #8ccd64;
   border-radius: 20px;
   border: #576238;

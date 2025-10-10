@@ -6,7 +6,7 @@ import SecondPage from "./SecondPage";
 export default function FirstPage(){
    return (
   <>
-    <div className="flex flex-col items-center justify-center gap-10 mb-20 px-4 h-auto">
+    <div className="flex flex-col items-center justify-center gap-10 mt-0 mx-10 h-auto">
       {/* Education Card */}
       <Card className="bg-transparent shadow-2xl w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
         <CardHeader>
