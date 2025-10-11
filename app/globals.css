@@ -174,10 +174,22 @@ b svg{
 }
 
 
-p b:nth-of-type(2) svg {
-  margin-top: -60px;
-  width:70%;
-  right:10%; animation-delay: 1s;
+.portfolioI b{
+  position: relative;
+  line-height: 70%;
+  display: inline-block;
+  font-weight: 400;
+}
+.portfolioI svg{
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 70%;
+  animation: draw 6s linear forwards;
+  stroke-dasharray:1000;
+  stroke-dashoffset: 1000;
+   animation-delay: 1s;
 }
 
 .signature b{
@@ -194,7 +206,7 @@ p b:nth-of-type(2) svg {
   width: 100%; /* optional if you want it to scale with the name */
   animation: draw 1s ease-in forwards;
   transform: translate3d(-50%, -50%, 0);
- animation-delay: 3s;
+ animation-delay: 4s;
   stroke-dasharray:1000;
   stroke-dashoffset: 1000;
 }
