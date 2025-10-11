@@ -28,11 +28,11 @@ export default function OutroPage(){
 
   
     return(
-    <div className="relative flex flex-col h-screen justify-between items-center text-black">
+    <div className="relative flex flex-col h-auto justify-between items-center text-black">
       <main className="flex flex-col justify-center items-center flex-grow p-4">
-       <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-center font-sans mb-12 animate-on-scroll">
+       <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-center font-sans mb-12 ">
         <b className="outro relative flex items-center justify-center flex-wrap animate-on-scroll outro-section">
-              <span className="relative w-full sm:w-auto max-w-[100%] mb-0 inline-block sm:h-auto">
+              <span className="relative w-full sm:w-auto max-w-[100%] mb-0 inline-block">
                   <svg  width="882" height="395" viewBox="0 0 882 395" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M64.5903 13.7649C72.2301 9.37139 79.8699 4.97791 84.2549 4.32555C88.64 3.67318 89.5388 6.89507 88.4289 22.3211C87.319 37.747 84.1732 65.2795 70.1942 100.844C56.2151 136.409 31.4981 179.173 18.091 203.106C4.6839 227.039 3.3357 230.847 4.88817 232.076C6.44065 233.306 10.9346 231.841 24.26 225.375C37.5854 218.909 59.606 207.486 75.444 200.137C91.2819 192.788 100.27 189.859 110.892 186.841" stroke="black" strokeWidth="8" strokeLinecap="round"/>
                     <path d="M130.352 164.697C157.316 164.697 173.004 162.939 175.953 159.251C178.87 155.602 178.016 151.108 176.892 147.855C174.974 142.301 146.421 145.454 128.125 150.176C114.052 153.808 117.197 166.135 117.408 178.41C117.476 182.355 122.168 183.921 125.109 184.955C132.599 186.584 138.959 188.066 147.075 188.51C153.394 188.661 164.18 188.661 175.292 188.661" stroke="black" strokeWidth="8" strokeLinecap="round"/>
