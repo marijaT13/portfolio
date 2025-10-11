@@ -28,7 +28,7 @@ export default function OutroPage(){
 
   
     return(
-    <div className="relative flex flex-col h-screen justify-between items-center text-black">
+    <div className="relative flex flex-col h-screen justify-between items-center text-black mt-0">
       <main className="flex flex-col justify-center items-center flex-grow p-4">
        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-center font-sans mb-12 ">
         <b className="outro relative flex items-center justify-center flex-wrap animate-on-scroll outro-section">

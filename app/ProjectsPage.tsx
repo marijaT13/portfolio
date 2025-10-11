@@ -171,7 +171,7 @@ export default function ProjectsPage(){
 
   return (
     <>
-    <section className="menu-swiper swiper-container w-full py-16 px-6 mb-25">
+    <section className="menu-swiper swiper-container w-full py-16 px-6 ">
       <div className="swiper-wrapper">
         {projects.map((project, index) => (
           <div className="swiper-slide" key={index}>
