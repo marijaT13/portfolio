@@ -5,18 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import OutroPage from "./OutroPage";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
+import { useEffect } from "react";
 
 export default function ProjectsPage(){
-  const router = useRouter();
+   const router = useRouter();
   const widgets = () => {
     router.push('/widgets')
   };
-
   const projects = [
     {
       title: "MediTrack",
@@ -112,81 +112,80 @@ export default function ProjectsPage(){
       )
     }
   ];
+ useEffect(() => {
+    const initMenuSwipers = () => {
+      const sliders = document.querySelectorAll<HTMLElement>('.menu-swiper');
+
+      if (!sliders.length) return;
+
+      sliders.forEach((sliderEl) => {
+        if (sliderEl.classList.contains('swiper-initialized')) return;
+
+
+        const swiperInstance = new Swiper(sliderEl, {
+          slidesPerView: 3,
+          centeredSlides: true,
+          spaceBetween: 30,
+          loop: false,
+          grabCursor: true,
+          breakpoints: {
+            980: { slidesPerView: 3 },
+            0: { slidesPerView: 1 },
+          },
+        });
+
+        // Click-to-activate and follow link
+        sliderEl.querySelectorAll<HTMLElement>('.swiper-slide').forEach((slide, index) => {
+          slide.addEventListener('click', (e) => {
+            const isActive = slide.classList.contains('swiper-slide-active');
+            const link = slide.querySelector('a') as HTMLAnchorElement | null;
+
+            if (!isActive) {
+              e.preventDefault();
+              swiperInstance.slideTo(index);
+            } else if (link) {
+              window.location.href = link.href;
+            }
+          });
+        });
+      });
+    };
+
+    initMenuSwipers();
+
+    // Cleanup on unmount
+    return () => {
+      document.querySelectorAll<HTMLElement>('.menu-swiper').forEach((el) => {
+        const instance = (el as any).swiper;
+        if (instance && typeof instance.destroy === 'function') {
+          instance.destroy(true, true);
+        }
+      });
+    };
+  }, []);
 
   return (
-   <>
-  <div id="ProjectsPage" className="px-10 sm:px-10 lg:px-20">
-    <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans lg:text-center md:text-left mb-26">
-      Projects.
-    </h1>
-
-    <div className="relative flex justify-center items-center min-h-[90vh]">
-      <Swiper
-        modules={[Navigation, EffectCoverflow]}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        loop
-        grabCursor
-        initialSlide={3}
-        effect="coverflow"
-        coverflowEffect={{
-          rotate: 0,
-          stretch: -60,
-          depth: 150,
-          modifier: 2.5,
-          slideShadows: false,
-        }}
-        className="w-full max-w-6xl"
-        onResize={(swiper) => swiper.update()} // keep focused slide in view
-        
-        breakpoints={{
-          320: { slidesPerView: 1, spaceBetween: 10 },
-          375: { slidesPerView: 1.05, spaceBetween: 12 },
-          425: { slidesPerView: 1.1, spaceBetween: 14 },
-          480: { slidesPerView: 1.2, spaceBetween: 16 },
-          540: { slidesPerView: 1.4, spaceBetween: 18 },
-          640: { slidesPerView: 1.6, spaceBetween: 20 },
-          768: { slidesPerView: 2.1, spaceBetween: 26 },
-          820: { slidesPerView: 2.3, spaceBetween: 28 },
-          900: { slidesPerView: 2.5, spaceBetween: 30 },
-          1024: { slidesPerView: 3, spaceBetween: 35 },
-          1200: { slidesPerView: 3, spaceBetween: 40 },
-          1400: { slidesPerView: 3, spaceBetween: 45 },
-        }}
-      >
-          
-        {projects.map((p, index) => (
-              <SwiperSlide key={index} className="flex justify-center items-center">
-                <Card className="bg-transparent 
-                backdrop-blur-md shadow-lg 
-                w-full max-w-xs sm:max-w-sm 
-                h-[450px] sm:h-[500px] flex flex-col 
-                justify-between rounded-2xl 
-                overflow-hidden
-                transform transition-transform duration-300 hover:scale-105">
-                  <CardHeader className="flex justify-center p-4">
-                    <Image
-                      src={p.img}
-                      width={200}
-                      height={150}
-                      alt={p.title}
-                      className="object-contain"
-                    />
-                  </CardHeader>
-                  <CardContent className="px-6 pb-6 font-sans text-sm leading-relaxed text-black overflow-auto">
-                    {p.description}
-                  </CardContent>
-                </Card>
-              </SwiperSlide>
-            ))}
-            <div className="swiper-button-prev !scale-80"></div> 
-            <div className="swiper-button-next !scale-80"></div>
-          </Swiper>
+    <>
+    <section className="menu-swiper swiper-container py-16 px-6 pb-50">
+      <div className="swiper-wrapper">
+        {projects.map((project, index) => (
+          <div className="swiper-slide" key={index}>
+            <figure className="menu-card bg-white shadow-md rounded-xl overflow-hidden p-4">
+              <img
+                src={project.img}
+                alt={project.title}
+                className="w-full h-40 object-contain mb-4"
+              />
+              <div className="date text-gray-500">PROJECT</div>
+              <figcaption className="text-gray-900">
+                <div className="mt-2 text-sm leading-relaxed">{project.description}</div>
+              </figcaption>
+            </figure>
+          </div>
+        ))}
       </div>
-    </div> 
-   <OutroPage/>
-   </>
+    </section>
+    <OutroPage/>
+    </>
   );
 }
