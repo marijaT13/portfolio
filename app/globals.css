@@ -228,7 +228,7 @@ b svg{
   stroke-dashoffset: 1000;
 }
 
-
+/* outro animation */
 .outro svg path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
@@ -239,19 +239,17 @@ b svg{
   animation: draw 2.5s ease forwards;
 }
 
-
-
-.outro {
-  position: relative;
-  display: inline-block;
-  line-height: 100%;
-}
-
 .outro svg {
   margin-top: -75px;
   margin-right: 20px;
   width: 200%;
   transform: translate3d(-50%, -50%, 0);
+}
+@media(max-width:768px){
+  .outro svg{
+    margin-top:-25px;
+
+  }
 }
 
 /* swiper */

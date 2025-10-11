@@ -30,9 +30,10 @@ export default function OutroPage(){
     return(
     <div className="relative flex flex-col h-screen justify-between items-center text-black">
       <main className="flex flex-col justify-center items-center flex-grow p-4">
-        <h1 className="text-6xl sm:text-8xl lg:text-9xl text-center font-sans mb-12 animate-on-scroll">
-          <b className="outro block animate-on-scroll outro-section">
-                    <svg width="882" height="395" viewBox="0 0 882 395" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-center font-sans mb-12 animate-on-scroll">
+        <b className="outro relative flex items-center justify-center flex-wrap animate-on-scroll outro-section">
+              <span className="relative w-full sm:w-auto max-w-[100%] mb-0 inline-block sm:h-auto">
+                  <svg  width="882" height="395" viewBox="0 0 882 395" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M64.5903 13.7649C72.2301 9.37139 79.8699 4.97791 84.2549 4.32555C88.64 3.67318 89.5388 6.89507 88.4289 22.3211C87.319 37.747 84.1732 65.2795 70.1942 100.844C56.2151 136.409 31.4981 179.173 18.091 203.106C4.6839 227.039 3.3357 230.847 4.88817 232.076C6.44065 233.306 10.9346 231.841 24.26 225.375C37.5854 218.909 59.606 207.486 75.444 200.137C91.2819 192.788 100.27 189.859 110.892 186.841" stroke="black" strokeWidth="8" strokeLinecap="round"/>
                     <path d="M130.352 164.697C157.316 164.697 173.004 162.939 175.953 159.251C178.87 155.602 178.016 151.108 176.892 147.855C174.974 142.301 146.421 145.454 128.125 150.176C114.052 153.808 117.197 166.135 117.408 178.41C117.476 182.355 122.168 183.921 125.109 184.955C132.599 186.584 138.959 188.066 147.075 188.51C153.394 188.661 164.18 188.661 175.292 188.661" stroke="black" strokeWidth="8" strokeLinecap="round"/>
                     <path d="M231.888 35.1113C213.912 145.211 195.936 255.311 186.676 315.059C177.415 374.807 177.415 380.868 178.314 384.495C179.213 388.122 181.011 389.132 182.611 389.905C185.514 391.307 194.139 391.703 210.201 386.4C229.41 370.492 241.857 355.524 244.58 348.14C245.506 344.795 245.506 342.27 245.506 339.669" stroke="black" strokeWidth="8" strokeLinecap="round"/>
@@ -45,6 +46,8 @@ export default function OutroPage(){
                     <path d="M797.768 4.24756C797.768 5.12625 797.768 6.00495 796.645 54.493C795.521 102.981 793.274 199.052 791.892 245.76C790.51 292.469 790.06 286.904 790.503 283.158C790.946 279.412 792.294 277.655 793.683 275.844" stroke="black" strokeWidth="8" strokeLinecap="round"/>
                     <path d="M864.97 102.752C808.251 143.562 803.688 148.888 799.623 151.852C798.337 152.79 796.907 153.911 796.886 153.343C796.777 150.307 803.198 145.675 810.443 141.392C817.059 137.482 824.538 136.479 829.978 137.065C834.45 137.547 841.751 149.11 853.538 163.746C861.729 171.059 866.768 173.163 870.615 173.607C872.665 173.757 874.912 173.757 877.227 173.757" stroke="black" strokeWidth="8" strokeLinecap="round"/>
                     </svg>ogether!
+                    </span>
+
                 </b>
              </h1>
 
