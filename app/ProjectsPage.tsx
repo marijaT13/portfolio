@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import { useEffect } from "react";
+import { SwiperOptions } from "swiper/types";
 
 export default function ProjectsPage(){
    const router = useRouter();
@@ -118,11 +119,11 @@ export default function ProjectsPage(){
 
       if (!sliders.length) return;
 
+     
       sliders.forEach((sliderEl) => {
-        if (sliderEl.classList.contains('swiper-initialized')) return;
+        if (sliderEl.classList.contains("swiper-initialized")) return;
 
-
-        const swiperInstance = new Swiper(sliderEl, {
+        const swiperOptions: SwiperOptions = {
           slidesPerView: 3,
           centeredSlides: true,
           spaceBetween: 30,
@@ -132,32 +133,36 @@ export default function ProjectsPage(){
             980: { slidesPerView: 3 },
             0: { slidesPerView: 1 },
           },
-        });
+        };
+
+        const swiperInstance = new Swiper(sliderEl, swiperOptions);
 
         // Click-to-activate and follow link
-        sliderEl.querySelectorAll<HTMLElement>('.swiper-slide').forEach((slide, index) => {
-          slide.addEventListener('click', (e) => {
-            const isActive = slide.classList.contains('swiper-slide-active');
-            const link = slide.querySelector('a') as HTMLAnchorElement | null;
+        sliderEl
+          .querySelectorAll<HTMLElement>(".swiper-slide")
+          .forEach((slide, index) => {
+            slide.addEventListener("click", (e) => {
+              const isActive = slide.classList.contains("swiper-slide-active");
+              const link = slide.querySelector("a") as HTMLAnchorElement | null;
 
-            if (!isActive) {
-              e.preventDefault();
-              swiperInstance.slideTo(index);
-            } else if (link) {
-              window.location.href = link.href;
-            }
+              if (!isActive) {
+                e.preventDefault();
+                swiperInstance.slideTo(index);
+              } else if (link) {
+                window.location.href = link.href;
+              }
+            });
           });
-        });
       });
     };
 
     initMenuSwipers();
 
-    // Cleanup on unmount
+    // Cleanup
     return () => {
-      document.querySelectorAll<HTMLElement>('.menu-swiper').forEach((el) => {
-        const instance = (el as any).swiper;
-        if (instance && typeof instance.destroy === 'function') {
+      document.querySelectorAll<HTMLElement>(".menu-swiper").forEach((el) => {
+        const instance = (el as unknown as { swiper?: Swiper }).swiper;
+        if (instance && typeof instance.destroy === "function") {
           instance.destroy(true, true);
         }
       });
@@ -166,7 +171,7 @@ export default function ProjectsPage(){
 
   return (
     <>
-    <section className="menu-swiper swiper-container py-16 px-6 pb-50">
+    <section className="menu-swiper swiper-container w-full py-16 px-6 pb-50">
       <div className="swiper-wrapper">
         {projects.map((project, index) => (
           <div className="swiper-slide" key={index}>
