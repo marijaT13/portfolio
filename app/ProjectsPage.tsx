@@ -170,7 +170,7 @@ export default function ProjectsPage(){
   }, []);
 
   return (
-    <>
+    <main className="flex flex-col items-center justify-center">
     <section className="menu-swiper swiper-container w-full py-16 px-6 ">
       <div className="swiper-wrapper">
         {projects.map((project, index) => (
@@ -191,6 +191,6 @@ export default function ProjectsPage(){
       </div>
     </section>
     <OutroPage/>
-    </>
+    </main>
   );
 }
