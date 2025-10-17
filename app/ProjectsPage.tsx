@@ -64,28 +64,6 @@ export default function ProjectsPage(){
       )
     },
     {
-      title: "Gifts4U",
-      img: "/assets/icons/logo2.svg",
-      description: (
-        <>
-          This project was a basic front-end project using HTML and CSS, 
-          completed in collaboration with a partner.<br/>
-          Our goal was to test our abilities, learn effective communication,
-          work on a single code branch, create a cohesive design, and implement interactive widgets.<br/>
-          Although simple, it was our first project during our early days of college, and it laid the
-          foundation for future teamwork and development skills.<br/>
-        
-          Through this project, I: 
-          <br/>
-          <ul className="list-disc ml-5 mt-2 text-sm text-black">
-            <li>Practiced teamwork on shared codebases,</li>
-            <li>Created cohesive UI with interactive elements,</li>
-            <li>Learned version control collaboration.</li>
-          </ul>
-        </>
-      )
-    },
-    {
       title: "Widgets",
       img: "/assets/icons/logo4.svg",
       description: (
@@ -111,7 +89,57 @@ export default function ProjectsPage(){
           </div>
         </>
       )
-    }
+    },
+    {
+      title: "Learning animations",
+      img: "/assets/icons/animations.svg",
+      description: (
+        <>
+          This project is a front-end clone of Apple’s official website, specifically of the MacBook section,
+          built to strengthen my skills in modern web technologies and explore advanced animation techniques.<br/>
+          It was developed using Vite + React (JSX), styled with Tailwind CSS, and enhanced with GSAP, Three.js, 
+          Zustand, and GLTF-to-JSX for 3D model integration and smooth interactions.<br/>
+          The goal was to understand how professional websites achieve seamless animations, 
+          efficient performance, and a polished user experience.<br/>
+        
+          Through this project, I: 
+          <br/>
+          <ul className="list-disc ml-5 mt-2 text-sm text-black"> 
+            <li>Recreated dynamic UI and animations inspired by Apple’s design principles,</li> 
+            <li>integrated 3D models using Three.js and converted GLTF assets into JSX components,</li> 
+            <li>utilized Zustand for lightweight state management,</li> 
+            <li>explored GSAP for smooth scroll and transition effects and</li> 
+            <li>improved understanding of component structure and reactivity in React with Vite.</li> 
+          </ul>
+          <Link href="https://www.figma.com/design/kbkr3EpE0c75L2BvhKmiNR/apple.com?node-id=0-1&t=PQAkautrObGb0qEV-1" target="_blank" className="text-blue-600 underline">
+              Here is the Figma design I followed
+          </Link>
+        </>
+      )
+    },
+    {
+      title: "Gifts4U",
+      img: "/assets/icons/logo2.svg",
+      description: (
+        <>
+          This project was a basic front-end project using HTML and CSS, 
+          completed in collaboration with a partner.<br/>
+          Our goal was to test our abilities, learn effective communication,
+          work on a single code branch, create a cohesive design, and implement interactive widgets.<br/>
+          Although simple, it was our first project during our early days of college, and it laid the
+          foundation for future teamwork and development skills.<br/>
+        
+          Through this project, I: 
+          <br/>
+          <ul className="list-disc ml-5 mt-2 text-sm text-black">
+            <li>Practiced teamwork on shared codebases,</li>
+            <li>Created cohesive UI with interactive elements,</li>
+            <li>Learned version control collaboration.</li>
+          </ul>
+        </>
+      )
+    },
+    
   ];
  useEffect(() => {
     const initMenuSwipers = () => {
