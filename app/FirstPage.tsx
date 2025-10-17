@@ -35,7 +35,7 @@ export default function FirstPage(){
         {/* LinkedIn QR */}
         <div className="flex flex-col items-center ml-20">
           <Image
-            src="/assets/images/frame11.png"
+            src="/assets/images/linkedin.png"
             width={250}
             height={250}
             alt="LinkedIn QR"
@@ -46,7 +46,7 @@ export default function FirstPage(){
         {/* GitHub QR */}
         <div className="flex flex-col items-center mt-8 sm:mt-0 mr-10">
           <Image
-            src="/assets/images/framee.png"
+            src="/assets/images/github.png"
             width={240}
             height={240}
             alt="GitHub QR"
