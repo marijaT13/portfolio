@@ -14,6 +14,7 @@ import Image from "next/image"
 import FirstPage from "./FirstPage";
 
 export default function IntroPage(){
+    
     return(
         <>  
         
@@ -46,7 +47,8 @@ export default function IntroPage(){
             </CardContent>
             </Card>
            </div> 
-                
+            
+    
         </div>
         <FirstPage/>
         

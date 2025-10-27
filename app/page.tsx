@@ -8,33 +8,51 @@ import { Download } from "lucide-react";
 export default function Home() {
    const fullText = "Marija Tashevska";
    const [showName, setShowName] = useState(false);
-const sectionRef = useRef<HTMLDivElement | null>(null);
+   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => setShowName(true), 1000);
-    return () => clearTimeout(timeout);
-  }, []);
+   const sectionRef = useRef<HTMLDivElement | null>(null);
+      useEffect(() => {
+        const timeout = setTimeout(() => setShowName(true), 1000);
+        return () => clearTimeout(timeout);
+      }, []);
 
-  useEffect(() => {
-    if (!showName) return;
-    
-      let index = 0;
-      const interval = setInterval(() => {
-      index++;
-     if (index === fullText.length) {
-        clearInterval(interval);
-      }
-    }, 150);
+      useEffect(() => {
+        if (!showName) return;
+        
+          let index = 0;
+          const interval = setInterval(() => {
+          index++;
+        if (index === fullText.length) {
+            clearInterval(interval);
+          }
+        }, 150);
 
-    return () => clearInterval(interval);
-  }, []);
+        return () => clearInterval(interval);
+      }, []);
 
- const scrollToIntro = () => {
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+      const scrollToIntro = () => {
+          if (sectionRef.current) {
+            sectionRef.current.scrollIntoView({ behavior: "smooth" });
+          }
+        };
 
+    //button for scroll on top
+        useEffect(() => {
+        const handleScroll = () => {
+          if (window.scrollY > 200) {
+            setShowScrollTop(true);
+          } else {
+            setShowScrollTop(false);
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
+
+      const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        };
   return (
   <main className="flex flex-col items-center justify-center min-h-screen overflow-x-hidden">
     <div className="w-full max-w-[1200px] flex flex-col items-center justify-center p-6 space-y-4">
@@ -52,7 +70,12 @@ const sectionRef = useRef<HTMLDivElement | null>(null);
                 CV
               </Button>
             </a>
+            <div className="w-full flex justify-end ">
+          <p className="inline-flex items-center m-3 mb-0 w-auto text-red-800 italic"
+          >Bitola, Macedonia</p>
           </div>
+          </div>
+          
     {/* portfolio title */}
     <div className="flex flex-col justify-center items-center h-screen space-y-4">
       <div className="flex w-full justify-center">
@@ -111,13 +134,34 @@ const sectionRef = useRef<HTMLDivElement | null>(null);
           </svg>
           </button>
       </div>
-
+      
       {/* IntroPage Section */}
       <div ref={sectionRef} className="w-full">
         <IntroPage />
       </div>
-
       </div>
+      {showScrollTop && (
+  <button
+    onClick={scrollToTop}
+    className="
+    fixed 
+    bottom-6 
+    right-6 
+    bg-red-800 
+    text-white 
+    p-3 
+    rounded-full 
+    shadow-lg 
+    hover:bg-red-700 
+    transition-all z-50"
+    aria-label="Scroll To Top"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18" />
+  </svg>
+
+  </button>
+)}
   </main> 
  );
 }
