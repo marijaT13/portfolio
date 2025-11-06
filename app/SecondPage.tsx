@@ -88,11 +88,10 @@ export default function SecondPage(){
                             height={80}
                             className="hover:animate-bounce"
                             />
-                            
                         </div>
                         <br/>
                         <strong >Tools & Platforms:</strong>
-                        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-5 place-items-center">
+                        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-5 place-items-center">
                             <Image
                             src="/assets/skills/appwrite1.png"
                             alt="appwrite"
@@ -135,7 +134,13 @@ export default function SecondPage(){
                             height={60}
                             className="hover:animate-bounce"
                             />
-                            
+                            <Image
+                            src="/assets/skills/wordpress.png"
+                            alt="wordpress"
+                            width={70}
+                            height={60}
+                            className="hover:animate-bounce"
+                            />
                         </div>
                         
                     </CardContent>

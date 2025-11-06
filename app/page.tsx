@@ -58,7 +58,7 @@ export default function Home() {
     <div className="w-full max-w-[1200px] flex flex-col items-center justify-center p-6 space-y-4">
           <div className="w-full flex justify-start">
             <a
-              href="/assets/files/CV - Marija Tashevska.pdf"
+              href="/assets/files/CV - Marija Tashevska en.pdf"
               download="Marija_Tashevska_CV.pdf"
               className="inline-flex items-center m-3 mb-0 w-auto"
             >
