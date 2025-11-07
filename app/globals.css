@@ -388,3 +388,9 @@ b svg{
   padding-top:10vh;
   padding-bottom:50vh;
 }
+
+@layer utilities {
+  .stroke-dash-animate {
+    transition: stroke-dashoffset 2s ease-in-out;
+  }
+}
