@@ -53,17 +53,20 @@ export default function FirstPage() {
               </CardTitle>
             </CardHeader>
 
-            <CardContent className="flex flex-wrap justify-center items-center gap-12 font-sans text-center">
+            <CardContent className="flex flex-wrap justify-center items-stretch gap-12 font-sans text-center">
               {/* Certificate 1 */}
               <CertificateItem
                 progress={1}
                 label="WordPress Course – SMX Academy 2021"
+                fileUrl="/assets/certificates/wordpress.pdf"
+
               />
 
               {/* Certificate 2 */}
               <CertificateItem
                 progress={0.18}
                 label="Full-Stack Web Development Bootcamp – Udemy"
+
               />
             </CardContent>
           </Card>
@@ -103,13 +106,17 @@ export default function FirstPage() {
 function CertificateItem({
   progress,
   label,
+  fileUrl,
 }: {
   progress: number;
   label: string;
+  fileUrl?:string;
 }) {
   const radius = 36;
   const circumference = 2 * Math.PI * radius;
   const [offset, setOffset] = useState(circumference);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const ref = useRef<HTMLDivElement | null>(null);
   //animation
   useEffect(()=>{
@@ -133,11 +140,22 @@ function CertificateItem({
   },[progress,circumference])
 
 
+  const handleClick = () => {
+    if (progress === 1 && fileUrl) {
+      setIsModalOpen(true);
+    }
+  };
 
 
   return (
-    <div ref={ref} className="flex flex-col items-center">
-  <div className="relative w-24 h-24 flex items-center justify-center">
+    <>
+    <div
+        ref={ref}
+        onClick={handleClick}
+        className={`flex flex-col items-center justify-center text-center cursor-pointer transition-transform ${
+          progress === 1 ? "hover:scale-105" : ""
+        }`}
+      ><div className="relative w-28 h-28 flex items-center justify-center">
     {/* Progress Circle */}
     <svg
       className="absolute inset-0 w-full h-full -rotate-90"
@@ -170,7 +188,8 @@ function CertificateItem({
     </svg>
 
     {/* Center Icon */}
-    <div className="flex items-center justify-center rounded-full w-12 h-12 shadow-lg">
+   <div className="absolute inset-0 flex items-center justify-center">
+    <div className="flex items-center justify-center rounded-full w-12 h-12 shadow-lg ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -199,13 +218,49 @@ function CertificateItem({
              m0 0a6.772 6.772 0 0 1-3.044 0"
         />
       </svg>
+      </div>
         </div>
       </div>
 
-      <p className="text-gray-600 italic mt-3 max-w-[12rem]">
-        Full-Stack Web Development <br /> Bootcamp – Udemy
+        <p className="text-gray-700 italic mt-3 max-w-[12rem] text-center leading-snug">
+        {label}      
       </p>
     </div>
+{isModalOpen && (
+  <div
+    className="fixed inset-0 bg-black/60 flex items-center justify-center z-[70]"
+    onClick={() => setIsModalOpen(false)}
+  >
+    <div
+      className="bg-white rounded-lg p-4 max-w-3xl w-[90%] relative shadow-lg"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close button */}
+      <button
+        className="absolute top-3 right-3 text-gray-700 hover:text-gray-900 z-20 bg-white/80 rounded-full px-3 py-1 shadow-md cursor-pointer"
+        onClick={() => setIsModalOpen(false)}
+      >
+        ✕
+      </button>
 
+      {/* PDF / Image Preview */}
+      {fileUrl?.toLowerCase().endsWith(".pdf") ? (
+        <iframe
+          src={`${fileUrl}#toolbar=0&navpanes=0&scrollbar=0`}
+          className="w-full h-[80vh] rounded-lg relative z-10"
+          title={label}
+        />
+      ) : (
+        <img
+          src={fileUrl}
+          alt={label}
+          className="w-full h-auto rounded-lg shadow-sm"
+        />
+      )}
+    </div>
+  </div>
+)}
+
+    </>
   );
 }
