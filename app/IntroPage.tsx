@@ -30,68 +30,74 @@ useEffect(() => {
   }
 }, [index, fullText]);
 return(
-<>  
-<div className="flex items-center justify-between min-h-screen px-4 sm:px-8 md:px-12 gap-6">
-    {/* Left side */}
-    <div className="flex-1 max-w-xl">
-<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-    {text}
-    <span className="animate-pulse">|</span>
-  </h1>
-    </div>
- 
-  {/* RIGHT SIDE – Your card */}
-<div className="hidden md:block max-w-sm bg-neutral-primary-soft p-6 rounded-md shadow-2xl dark:bg-neutral-700/50">
+<>  <div className="min-h-screen px-4 sm:px-8 md:px-12 flex flex-col md:flex-row md:items-center gap-10">
+
+  {/* WELCOME — always rendered, just flows naturally */}
+  <div className="flex-1 max-w-xl">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl pt-30 pb-0 mb-0 md:pt-0 sm:pt-20 font-bold text-gray-900 dark:text-white leading-tight">
+      {text}
+      <span className="animate-pulse">|</span>
+    </h1>
+  </div>
+
+  {/* DESKTOP CARD */}
+  <div className="hidden md:block max-w-md bg-neutral-primary-soft p-6 rounded-md shadow-2xl dark:bg-neutral-700/50 pb-10">
     <img
       src="./assets/images/intropageprofile2.png"
       alt="Profile Picture"
       className="rounded-md"
     />
+
     <h5 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">
       Marija Tashevska
     </h5>
-    <p className="mb-6 text-body text-gray-600 dark:text-gray-400">
+
+    <p className="mb-4 text-gray-600 dark:text-gray-400">
       Junior Software Engineer
     </p>
-    <p className="dark:text-white">
+
+    <p className="text-sm dark:text-white leading-relaxed">
       Hi there! I&apos;m Marija, a passionate Junior Software Engineer with a knack
       for crafting elegant solutions to complex problems.
-      <hr className="my-4" />
+    </p>
+
+    <hr className="my-4" />
+
+    <p className="text-sm dark:text-white leading-relaxed">
       Outside of coding, I draw inspiration from exploring neighboring countries…
     </p>
   </div>
-  {/* Mobile card */}
-  <div className="md:hidden w-full max-w-md bg-neutral-primary-soft rounded-lg shadow-xl dark:bg-neutral-700/50 p-4">
 
-  {/* FLEX ROW — THIS IS THE KEY */}
-  <div className="flex flex-row items-center gap-4">
-
-    {/* TEXT — LEFT */}
-    <div className="flex-1">
-      <h5 className="text-lg font-semibold text-gray-900 dark:text-white">
-        Marija Tashevska
-      </h5>
-
-      <p className="text-sm text-gray-600 dark:text-gray-400">
-        Junior Software Engineer
-      </p>
-
-      <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-        Hi there! I&apos;m Marija, a passionate Junior Software Engineer with a knack
-        for crafting elegant solutions to complex problems.
-      <hr className="my-2" />
-      Outside of coding, I draw inspiration from exploring neighboring countries…
-    </p>
-    </div>
-      
+  {/* MOBILE CARD — SEPARATE, BELOW WELCOME */}
+  <div className="md:hidden w-full max-w-md mx-auto bg-neutral-primary-soft rounded-lg shadow-xl dark:bg-neutral-700/50 p-4">
     <img
-    src="./assets/images/intropageprofile.png"
-    alt="Profile Picture"
-    className="w-40 h-72 object-cover"
+      src="./assets/images/intropageprofile2.png"
+      alt="Profile Picture"
+      className="w-full h-56 object-cover rounded-lg mb-4"
     />
-    </div>
+
+    <h5 className="text-lg font-semibold text-gray-900 dark:text-white">
+      Marija Tashevska
+    </h5>
+
+    <p className="text-sm text-gray-600 dark:text-gray-400">
+      Junior Software Engineer
+    </p>
+
+    <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+      Hi there! I&apos;m Marija, a passionate Junior Software Engineer with a knack
+      for crafting elegant solutions to complex problems.
+    </p>
+
+    <hr className="my-2" />
+
+    <p className="text-sm text-gray-700 dark:text-gray-300">
+      Outside of coding, I draw inspiration from exploring neighboring countries…
+    </p>
   </div>
+
 </div>
+
 {/* ABOUT */}
   <section id="about" className="w-full scroll-mt-24">
     <FirstPage />

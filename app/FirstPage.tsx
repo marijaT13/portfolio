@@ -100,7 +100,7 @@ export default function FirstPage() {
     </div>
 
   {/* PROJECTS */}
-  <section id="projects" className="w-full scroll-mt-24">
+  <section id="skills" className="w-full scroll-mt-24">
     <SecondPage />
   </section>
 
