@@ -1,7 +1,8 @@
 'use client';
+import { Analytics } from "@vercel/analytics/next"
+
 import { useEffect, useRef, useState } from "react";
 import IntroPage from "./IntroPage";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { useTheme } from "next-themes";
