@@ -6,14 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
-
-
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
+
 const navigation = [
   { name: 'About', href: '#about', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Skills', href: '#', current: false },
-  { name: 'Contact', href: '#', current: false },
+  { name: 'Skills', href: '#skills', current: false },
+  { name: 'Projects', href: '#projects', current: false },
+  { name: 'Contact', href: '#contact', current: false },
   
 ]
 
@@ -121,11 +120,20 @@ if (!mounted) {
 
                 {/* LOGO */}
                 <div className="flex flex-1 items-center justify-center sm:justify-start">
-                  <img
+                  
+                  <button
+                    onClick={scrollToTop}
+                    
+                    className="mr-3 cursor-pointer"
+                    aria-label="Scroll To Top"
+                  >
+                    <img
                     src="./assets/images/favicon-1.png"
                     alt="Your Company"
                     className="h-8 w-auto"
                   />
+                  </button>
+                  
 
                   {/* DESKTOP NAV LINKS */}
                   <div className="hidden sm:ml-6 sm:flex sm:space-x-2">
@@ -171,7 +179,6 @@ if (!mounted) {
               </div>
             </div>
           </div>
-
           {/* MOBILE MENU PANEL */}
           <DisclosurePanel className="sm:hidden mt-2">
             <div
@@ -208,22 +215,22 @@ if (!mounted) {
                 </label>
 
                 <button
-    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-    className="
-      p-2 rounded-md
-      bg-gray-100 dark:bg-gray-800
-      text-gray-700 dark:text-gray-200
-      hover:bg-gray-200 dark:hover:bg-gray-700
-      transition
-    "
-    aria-label="Toggle theme"
-  >
-    {theme === "dark" ? (
-      <Sun className="h-5 w-5" />
-    ) : (
-      <Moon className="h-5 w-5" />
-    )}
-  </button>
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="
+                  p-2 rounded-md
+                  bg-gray-100 dark:bg-gray-800
+                  text-gray-700 dark:text-gray-200
+                  hover:bg-gray-200 dark:hover:bg-gray-700
+                  transition
+                "
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
+              </button>
               </div>
             </div>
             
@@ -232,11 +239,16 @@ if (!mounted) {
       )}
       </Disclosure>
     </div>
+    
     <div className="w-full max-w-300 flex flex-col items-center justify-center p-6 space-y-4">
       {/* IntroPage Section */}
-      <div ref={sectionRef} className="w-full">
-        <IntroPage />
-      </div>
+      
+  {/* INTRO */}
+  <section ref={sectionRef} className="w-full">
+    <IntroPage />
+  </section>
+
+  
       </div>
       {showScrollTop && (
   <button

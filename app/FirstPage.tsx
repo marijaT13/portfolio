@@ -99,7 +99,11 @@ export default function FirstPage() {
     
     </div>
 
-   <SecondPage />
+  {/* PROJECTS */}
+  <section id="projects" className="w-full scroll-mt-24">
+    <SecondPage />
+  </section>
+
   </>
 );
 }

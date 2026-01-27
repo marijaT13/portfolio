@@ -218,7 +218,11 @@ export default function ProjectsPage(){
         ))}
       </div>
     </section>
-    <OutroPage/>
+   
+  {/* CONTACT */}
+  <section id="contact" className="w-full scroll-mt-24">
+    <OutroPage />
+  </section>   
     </main>
   );
 }

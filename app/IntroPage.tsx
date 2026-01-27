@@ -12,46 +12,91 @@ import {
 import Image from "next/image"
 
 import FirstPage from "./FirstPage";
+import { useEffect, useState } from "react";
 
 export default function IntroPage(){
-    
-    return(
-        <>  
-        
-         <div className="flex flex-col md:grid md:grid-cols-2 justify-center items-center h-auto gap-10 px-2 py-20 mt-0">
-            <div className="flex justify-center items-center m-4">
-                {/* <img
-                src="./assets/images/intropageprofile2.png"
-                height={600}
-                width={600}
-                alt='intro-illustration'
-                /> */}
-           </div>
-           <div className="flex justify-center items-center mt-0">
-            <Card className="bg-transparent shadow-2xl m-10">
-            <CardHeader>
-                <CardTitle className="text-5xl font-sans ">Hello.</CardTitle>                
-            </CardHeader>
-            <CardContent className="font-sans">
-                <p>With a fresh academic foundation and a curious mind, I merge my love
-                for technology with creativity to craft seamless and visually captivating 
-                digital experiences. <br/> 
-                I enjoy building digital experiences that are not only functional 
-                and seamless but also visually engaging.  <br/> 
-                Outside of coding, I draw inspiration from exploring neighboring countries
-                —visiting museums, galleries, historic sites, cafes and the beautiful nature
-                 and inspirational vistas — which fuels both my creativity and curiosity.<br/>  
-                I thrive on continuous learning, and I’m always eager to take on new challenges 
-                that push me to grow as a developer and as a thinker.<br/>
-                </p>
-            </CardContent>
-            </Card>
-           </div> 
-            
-    
-        </div>
-        <FirstPage/>
-        
-        </>
+  const fullText = "Welcome to my portfolio";
+const [text, setText] = useState("");
+const [index, setIndex] = useState(0);
+
+useEffect(() => {
+  if (index < fullText.length) {
+    const timeout = setTimeout(() => {
+      setText((prev) => prev + fullText[index]);
+      setIndex(index + 1);
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }
+}, [index, fullText]);
+return(
+<>  
+<div className="flex items-center justify-between min-h-screen px-4 sm:px-8 md:px-12 gap-6">
+    {/* Left side */}
+    <div className="flex-1 max-w-xl">
+<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+    {text}
+    <span className="animate-pulse">|</span>
+  </h1>
+    </div>
+ 
+  {/* RIGHT SIDE – Your card */}
+<div className="hidden md:block max-w-sm bg-neutral-primary-soft p-6 rounded-md shadow-2xl dark:bg-neutral-700/50">
+    <img
+      src="./assets/images/intropageprofile2.png"
+      alt="Profile Picture"
+      className="rounded-md"
+    />
+    <h5 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">
+      Marija Tashevska
+    </h5>
+    <p className="mb-6 text-body text-gray-600 dark:text-gray-400">
+      Junior Software Engineer
+    </p>
+    <p className="dark:text-white">
+      Hi there! I'm Marija, a passionate Junior Software Engineer with a knack
+      for crafting elegant solutions to complex problems.
+      <hr className="my-4" />
+      Outside of coding, I draw inspiration from exploring neighboring countries…
+    </p>
+  </div>
+  {/* Mobile card */}
+  <div className="md:hidden w-full max-w-md bg-neutral-primary-soft rounded-lg shadow-xl dark:bg-neutral-700/50 p-4">
+
+  {/* FLEX ROW — THIS IS THE KEY */}
+  <div className="flex flex-row items-center gap-4">
+
+    {/* TEXT — LEFT */}
+    <div className="flex-1">
+      <h5 className="text-lg font-semibold text-gray-900 dark:text-white">
+        Marija Tashevska
+      </h5>
+
+      <p className="text-sm text-gray-600 dark:text-gray-400">
+        Junior Software Engineer
+      </p>
+
+      <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
+        Hi there! I'm Marija, a passionate Junior Software Engineer with a knack
+        for crafting elegant solutions to complex problems.
+      <hr className="my-2" />
+      Outside of coding, I draw inspiration from exploring neighboring countries…
+    </p>
+    </div>
+      
+    <img
+    src="./assets/images/intropageprofile.png"
+    alt="Profile Picture"
+    className="w-40 h-72 object-cover"
+    />
+    </div>
+  </div>
+</div>
+{/* ABOUT */}
+  <section id="about" className="w-full scroll-mt-24">
+    <FirstPage />
+  </section>
+
+</>
     )
 }

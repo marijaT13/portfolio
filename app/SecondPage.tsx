@@ -147,7 +147,12 @@ export default function SecondPage(){
                     </Card>
                 </div>   
             </div>
-            <ProjectsPage/>
+            
+  {/* SKILLS */}
+  <section id="skills" className="w-full scroll-mt-24">
+    <ProjectsPage />
+  </section>
+
         </>
     )
 }
