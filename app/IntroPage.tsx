@@ -20,12 +20,12 @@ export default function IntroPage(){
         
          <div className="flex flex-col md:grid md:grid-cols-2 justify-center items-center h-auto gap-10 px-2 py-20 mt-0">
             <div className="flex justify-center items-center m-4">
-                <Image
-                src="assets/icons/intro.svg"
+                {/* <img
+                src="./assets/images/intropageprofile2.png"
                 height={600}
                 width={600}
                 alt='intro-illustration'
-                />
+                /> */}
            </div>
            <div className="flex justify-center items-center mt-0">
             <Card className="bg-transparent shadow-2xl m-10">
