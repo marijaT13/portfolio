@@ -54,7 +54,7 @@ return(
       Junior Software Engineer
     </p>
     <p className="dark:text-white">
-      Hi there! I'm Marija, a passionate Junior Software Engineer with a knack
+      Hi there! I&apos;m Marija, a passionate Junior Software Engineer with a knack
       for crafting elegant solutions to complex problems.
       <hr className="my-4" />
       Outside of coding, I draw inspiration from exploring neighboring countries…
@@ -77,7 +77,7 @@ return(
       </p>
 
       <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
-        Hi there! I'm Marija, a passionate Junior Software Engineer with a knack
+        Hi there! I&apos;m Marija, a passionate Junior Software Engineer with a knack
         for crafting elegant solutions to complex problems.
       <hr className="my-2" />
       Outside of coding, I draw inspiration from exploring neighboring countries…
