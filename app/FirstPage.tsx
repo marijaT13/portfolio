@@ -13,44 +13,38 @@ export default function FirstPage() {
       <div className="flex flex-col items-center justify-center gap-16 px-6 sm:px-10 py-10">
         {/* EDUCATION CARD */}
         <div className="flex flex-col sm:flex-row justify-center items-stretch gap-12 w-full max-w-6xl">
-          <Card className="bg-transparent shadow-2xl w-full">
-            <CardHeader>
-              <CardTitle className="text-3xl sm:text-4xl font-sans text-center">
-                Education.
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="font-sans text-center text-gray-800 leading-relaxed">
-              <p className="text-gray-600 italic">
-                October 2021 – September 2025
-              </p>
-              <p className="text-gray-900 font-bold text-lg mb-4">FIKT</p>
-              <p>
-                I am a college graduate from the Faculty of Information and
-                Communication Technologies. I studied a wide range of ICT
-                disciplines including programming, networking, and database
-                systems, learning how to design and implement them effectively.
-              </p>
-              <br />
-              <p>
-                Through academic and project-based work, I gained hands-on
-                experience in designing, developing, and deploying
-                technology-driven solutions.
-              </p>
-              <br />
-              <p>
-                This blend of theory and practice has strengthened my ability to
-                analyze problems, think critically, and deliver efficient
-                digital solutions.
+          <Card className="bg-transparent shadow-2xl w-full dark:bg-neutral-700/50">
+            
+            <CardContent className="font-sans text-left text-gray-800 leading-relaxed pt-10">
+             
+              <p className="dark:text-gray-200">
+                A freshly graduated software engineer who is learning how to make an
+                impact in the tech world.
+                <br/>
+                Through my academic years, I gained hands-on
+                experience and guidance how to design, develop and implement 
+                software solutions using various programming languages and technologies.
+                <br/>
+                My love for coding lies in Frontend Development where I can express my style and creativity. 
+                <br/>
+                Inbetween my classes and tests, I undertook projects on my own,
+                which allowed me to apply theoretical knowledge into practical applications and hardcode 
+                all that I have learned.
+                <br/>
+                <br/>
+                Now, I&apos;m  looking for opportunities to further enhance my skills, contribute to
+                real-world projects and add my sugar, spice and everything nice to the looks of the world wide web. 
               </p>
             </CardContent>
           </Card>
 
           {/* CERTIFICATES CARD */}
-          <Card className="bg-transparent shadow-2xl w-full">
+          <Card className="bg-transparent shadow-2xl w-full dark:bg-neutral-700/50">
             <CardHeader>
-              <CardTitle className="text-3xl sm:text-4xl font-sans text-center">
-                Certificates.
-              </CardTitle>
+              <p className="font-sans text-center font-bold text-gray-800 dark:text-gray-300 mb-2">
+                When I&apos;m not traveling, you can find me learning new skills
+                online!
+              </p>
             </CardHeader>
 
             <CardContent className="flex flex-wrap justify-center items-stretch gap-12 font-sans text-center">
@@ -71,31 +65,6 @@ export default function FirstPage() {
             </CardContent>
           </Card>
         </div>
-
-      {/* QR Images Section */}
-     <div className="flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-30 m-10 mt-20">
-        {/* LinkedIn QR */}
-        <div className="flex flex-col items-center ml-20">
-          <Image
-            src="/assets/images/linkedin.png"
-            width={250}
-            height={250}
-            alt="LinkedIn QR"
-            className="w-[220px] sm:w-[250px] h-auto"
-          />
-        </div>
-
-        {/* GitHub QR */}
-        <div className="flex flex-col items-center mt-8 sm:mt-0 mr-10">
-          <Image
-            src="/assets/images/github.png"
-            width={240}
-            height={240}
-            alt="GitHub QR"
-            className="w-[240px] sm:w-[240px] h-auto"
-          />
-        </div>
-      </div>
     
     </div>
 
@@ -167,7 +136,7 @@ function CertificateItem({
     >
       {/* Background Circle */}
       <circle
-        className="text-gray-400"
+        className="text-gray-400 dark:text-gray-300"
         stroke="currentColor"
         strokeWidth="4"
         fill="transparent"
@@ -177,7 +146,7 @@ function CertificateItem({
       />
       {/* Progress Circle */}
       <circle
-        className="text-red-700 stroke-dash-animate" 
+        className="text-[var(--certificate-bar)] stroke-dash-animate" 
         stroke="currentColor"
         strokeWidth="6"
         strokeLinecap="round"
@@ -200,7 +169,7 @@ function CertificateItem({
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-7 h-7 text-gray-800"
+        className="w-7 h-7 text-gray-800 dark:text-gray-700"
       >
         <path
           strokeLinecap="round"
@@ -226,7 +195,7 @@ function CertificateItem({
         </div>
       </div>
 
-        <p className="text-gray-700 italic mt-3 max-w-[12rem] text-center leading-snug">
+        <p className="text-gray-700 dark:text-gray-200 italic mt-3 max-w-[12rem] text-center leading-snug">
         {label}      
       </p>
     </div>
