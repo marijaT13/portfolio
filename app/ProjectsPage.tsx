@@ -16,7 +16,7 @@ import { SwiperOptions } from "swiper/types";
 export default function ProjectsPage(){
    const router = useRouter();
   const widgets = () => {
-    router.push('/widgets')
+    router.push('/#WidgetsPage');
   };
   const projects = [
     {
