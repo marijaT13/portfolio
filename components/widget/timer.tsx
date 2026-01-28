@@ -1,6 +1,5 @@
 'use client'
 import { useState, useEffect, useRef } from "react";
-import "/app/widgets.css";
 
 const Timer = () => {
   const [timer, setTimer] = useState<string>("00:00:00");

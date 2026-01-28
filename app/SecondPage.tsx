@@ -1,4 +1,4 @@
-import LogoLoop from './LogoLoop';
+import LogoLoop from '@/components/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { FaNodeJs, FaWordpress, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaAndroid } from 'react-icons/fa';
 import { SiMongodb, SiAppwrite, SiFirebase } from 'react-icons/si';
