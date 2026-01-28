@@ -2,6 +2,7 @@ import LogoLoop from './LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { FaNodeJs, FaWordpress, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaAndroid } from 'react-icons/fa';
 import { SiMongodb, SiAppwrite, SiFirebase } from 'react-icons/si';
+import ProjectsPage from './ProjectsPage';
 
 // Alternative with image sources
 const techLogos = [
@@ -24,6 +25,7 @@ const techLogos = [
 
 export default function SecondPage() {
   return (
+    <>
     <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}} className='pt-20'>
       {/* Basic horizontal loop */}
       <LogoLoop
@@ -34,7 +36,12 @@ export default function SecondPage() {
         gap={60}
         hoverSpeed={0}
         fadeOutColor='none'
-/>
+    />
+    
     </div>
+      <section id="projects" className="w-full scroll-mt-24">
+        <ProjectsPage/>
+        </section>
+        </>
   );
 }
