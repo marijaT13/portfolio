@@ -1,7 +1,8 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import Image from "next/image";
+import { Card, CardHeader, CardTitle, CardContent, CardItemMeta, CardList, CardItemLeft, CardItemText, CardItemSubtitle, CardItemTitle, CardIcon, CardItem } from "@/components/ui/card";
 import SecondPage from "./SecondPage";
 import { useEffect, useRef, useState } from "react";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import {HiCode} from "react-icons/hi";
 
 export default function FirstPage() {
   // Helper constants for cleaner math
@@ -13,10 +14,8 @@ export default function FirstPage() {
       <div className="flex flex-col items-center justify-center gap-16 px-6 sm:px-10 py-10">
         {/* EDUCATION CARD */}
         <div className="flex flex-col sm:flex-row justify-center items-stretch gap-12 w-full max-w-6xl">
-          <Card className="bg-transparent shadow-2xl w-full dark:bg-neutral-700/50">
-            
+      <Card className="bg-transparent shadow-2xl w-full md:w-1/2 dark:bg-neutral-700/50">    
             <CardContent className="font-sans text-left text-gray-800 leading-relaxed pt-10">
-             
               <p className="dark:text-gray-200">
                 A freshly graduated software engineer who is learning how to make an
                 impact in the tech world.
@@ -39,7 +38,7 @@ export default function FirstPage() {
           </Card>
 
           {/* CERTIFICATES CARD */}
-          <Card className="bg-transparent shadow-2xl w-full dark:bg-neutral-700/50">
+        <Card className="bg-transparent shadow-2xl w-full md:w-1/2 dark:bg-neutral-700/50">
             <CardHeader>
               <p className="font-sans text-center font-bold text-gray-800 dark:text-gray-300 mb-2">
                 In my free time I travel, and when I travel, I gather inspiration and skills.
@@ -66,7 +65,81 @@ export default function FirstPage() {
             </CardContent>
           </Card>
         </div>
-    
+
+{/* EDUCATION AND WORK */}
+      <div className="flex flex-col md:flex-row justify-center items-stretch gap-12 w-full max-w-6xl">
+        <Card className="bg-transparent shadow-2xl w-full dark:bg-neutral-700/50">
+        <CardHeader className="flex-row items-center gap-4">
+          <FaGraduationCap className="text-2xl"/>
+          <CardTitle className="m-0 p-0 text-xl">Education</CardTitle>
+        </CardHeader>
+
+        <CardContent>
+        <CardList>
+        <CardItem>
+        <CardItemLeft>
+        <CardIcon className="bg-white">
+          <img
+          src={'/assets/images/fiktlogo.png'}
+          />
+        </CardIcon>
+        <CardItemText>
+        <CardItemTitle>FICT</CardItemTitle>
+        <CardItemSubtitle className="dark:text-gray-300">BSs - Computer Science</CardItemSubtitle>
+        <CardItemSubtitle className="dark:text-gray-300">Bitola, Macedonia</CardItemSubtitle>
+        </CardItemText>
+        </CardItemLeft>
+        <CardItemMeta className="dark:text-gray-300">10.2021 - 09.2025</CardItemMeta>
+        </CardItem>
+
+
+        <CardItem>
+        <CardItemLeft>
+        <CardIcon className="bg-white">
+          <img
+          src={'/assets/images/jbt.png'}
+          />
+        </CardIcon>
+        <CardItemText>
+        <CardItemTitle>Gymnasium Josip Broz Tito</CardItemTitle>
+        <CardItemSubtitle className="dark:text-gray-300">Natural Sciences and Mathematics field - Combination A</CardItemSubtitle>
+        <CardItemSubtitle className="dark:text-gray-300">Bitola, Macedonia</CardItemSubtitle>
+        </CardItemText>
+        </CardItemLeft>
+        <CardItemMeta className="dark:text-gray-300">09.2017 - 06.2021</CardItemMeta>
+        </CardItem>
+        </CardList>
+        </CardContent>
+        </Card>
+        
+        <Card className="bg-transparent shadow-2xl w-full dark:bg-neutral-700/50">
+        <CardHeader className="flex-row items-center gap-4">
+          <FaBriefcase className="text-xl"/>
+          <CardTitle className="m-0 p-0 text-xl">Work</CardTitle>
+        </CardHeader>
+
+        <CardContent>
+        <CardList>
+        <CardItem>
+        <CardItemLeft>
+        <CardIcon className="bg-white ">
+          <img
+          src={'/assets/images/softwareyard.jpg'}
+        style={{ width: '100%', height: '100%', borderRadius: '50%' }}
+          />
+        </CardIcon>
+        <CardItemText>
+        <CardItemTitle>Software Yard</CardItemTitle>
+        <CardItemSubtitle className="dark:text-gray-300">QA Tester Internship</CardItemSubtitle>
+        <CardItemSubtitle className="dark:text-gray-300">Bitola, Macedonia</CardItemSubtitle>
+        </CardItemText>
+        </CardItemLeft>
+        <CardItemMeta className="dark:text-gray-300">01.2026 - now</CardItemMeta>
+        </CardItem>
+        </CardList>
+        </CardContent>
+        </Card>
+    </div>
     </div>
 
   {/* PROJECTS */}

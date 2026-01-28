@@ -11,7 +11,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react
 
 const navigation = [
   { name: 'About', href: '#about', current: false },
-  { name: 'Skills', href: '#skills', current: false },
   { name: 'Projects', href: '#projects', current: false },
   { name: 'Contact', href: '#contact', current: false },
   

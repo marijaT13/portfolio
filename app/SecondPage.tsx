@@ -26,6 +26,7 @@ const techLogos = [
 export default function SecondPage() {
   return (
     <>
+    <p className='text-center text-5xl pt-17 font-sans font-bold text-gray-900 dark:text-gray-200'>Skills</p>
     <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}} className='pt-20'>
       {/* Basic horizontal loop */}
       <LogoLoop

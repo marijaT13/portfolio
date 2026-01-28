@@ -60,17 +60,114 @@ const CardContent = React.forwardRef<
   <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
 ))
 CardContent.displayName = "CardContent"
+const CardList = React.forwardRef<
+  HTMLUListElement,
+  React.HTMLAttributes<HTMLUListElement>
+>(({ className, ...props }, ref) => (
+  <ul
+    ref={ref}
+    className={cn("space-y-5", className)}
+    {...props}
+  />
+))
+CardList.displayName = "CardList"
 
-const CardFooter = React.forwardRef<
+const CardItem = React.forwardRef<
+  HTMLLIElement,
+  React.HTMLAttributes<HTMLLIElement>
+>(({ className, ...props }, ref) => (
+  <li
+    ref={ref}
+    className={cn("flex items-start justify-between gap-4", className)}
+    {...props}
+  />
+))
+CardItem.displayName = "CardItem"
+
+// Left side (icon + text)
+const CardItemLeft = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn("flex items-start gap-3", className)}
     {...props}
   />
 ))
-CardFooter.displayName = "CardFooter"
+CardItemLeft.displayName = "CardItemLeft"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+const CardIcon = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "h-12 w-12 shrink-0 rounded-full bg-muted flex items-center justify-center",
+      className
+    )}
+    {...props}
+  />
+))
+CardIcon.displayName = "CardIcon"
+
+const CardItemText = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("space-y-0.5", className)} {...props} />
+))
+CardItemText.displayName = "CardItemText"
+
+const CardItemTitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("font-medium leading-none", className)}
+    {...props}
+  />
+))
+CardItemTitle.displayName = "CardItemTitle"
+
+const CardItemSubtitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+CardItemSubtitle.displayName = "CardItemSubtitle"
+
+// Right side (dates / meta)
+const CardItemMeta = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-sm text-muted-foreground whitespace-nowrap", className)}
+    {...props}
+  />
+))
+CardItemMeta.displayName = "CardItemMeta"
+
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardList,
+  CardItem,
+  CardItemLeft,
+  CardIcon,
+  CardItemText,
+  CardItemTitle,
+  CardItemSubtitle,
+  CardItemMeta,
+}
