@@ -162,6 +162,7 @@ export {
   CardHeader,
   CardTitle,
   CardContent,
+  CardDescription,
   CardList,
   CardItem,
   CardItemLeft,
