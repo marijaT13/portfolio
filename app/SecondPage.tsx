@@ -1,158 +1,40 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import Image from "next/image";
-import ProjectsPage from "./ProjectsPage";
+import LogoLoop from './LogoLoop';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import { FaNodeJs, FaWordpress, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaAndroid } from 'react-icons/fa';
+import { SiMongodb, SiAppwrite, SiFirebase } from 'react-icons/si';
 
-export default function SecondPage(){
-    return(
-        <>
-           <div className="flex justify-center items-center gap-4 mb-40"> 
-                <div className="flex justify-center items-center mt-0">
-                    <Card className="bg-transparent shadow-2xl m-10 w-[auto] h-[auto]">
-                    <CardHeader>
-                        <CardTitle className="text-5xl font-sans ">Skills.</CardTitle>                
-                    </CardHeader>
-                    <CardContent className="font-sans">
-                        <p>I had the privilege of studying at a university that exposed 
-                        me to a wide range of programming languages, database integrations, 
-                        and software development methodologies.  <br/> 
-                        This allowed me to develop a strong foundation in multiple 
-                        technologies and the ability to quickly adapt to new ones.<br/>
-                        Although I’ve experimented with many tools and frameworks, the following 
-                        tech stack has become my go-to for building efficient and enjoyable 
-                        digital experiences:
-                        <br/>
-                        <br/>
-                        </p>
-                       <strong>Technical Skills:</strong>
-                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-9 gap-6 place-items-center">
-                            <Image
-                            src="/assets/skills/ts1.png"
-                            alt="typescript"
-                            width={50}
-                            height={50}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/react1.png"
-                            alt="react"
-                            width={60}
-                            height={60}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/java.png"
-                            alt="java"
-                            width={60}
-                            height={60}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/tailwindcss1.png"
-                            alt="tailwindcss"
-                            width={50}
-                            height={50}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/js.png"
-                            alt="js"
-                            width={70}
-                            height={70}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/html1.png"
-                            alt="html"
-                            width={55}
-                            height={55}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/css.png"
-                            alt="css"
-                            width={70}
-                            height={70}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/nextjs.png"
-                            alt="nextjs"
-                            width={90}
-                            height={80}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/nodejs.png"
-                            alt="nodejs"
-                            width={90}
-                            height={80}
-                            className="hover:animate-bounce"
-                            />
-                        </div>
-                        <br/>
-                        <strong >Tools & Platforms:</strong>
-                        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-5 place-items-center">
-                            <Image
-                            src="/assets/skills/appwrite1.png"
-                            alt="appwrite"
-                            width={50}
-                            height={50}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/mongodb1.png"
-                            alt="mongodb"
-                            width={80}
-                            height={80}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/firebase1.png"
-                            alt="tailwindcss"
-                            width={80}
-                            height={80}
-                            className="hover:animate-bounce"
-                            />                            
-                            <Image
-                            src="/assets/skills/figma.png"
-                            alt="figma"
-                            width={80}
-                            height={80}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/androids.png"
-                            alt="androidstudio"
-                            width={60}
-                            height={60}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/git.png"
-                            alt="git"
-                            width={60}
-                            height={60}
-                            className="hover:animate-bounce"
-                            />
-                            <Image
-                            src="/assets/skills/wordpress.png"
-                            alt="wordpress"
-                            width={70}
-                            height={60}
-                            className="hover:animate-bounce"
-                            />
-                        </div>
-                        
-                    </CardContent>
-                    </Card>
-                </div>   
-            </div>
+// Alternative with image sources
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
 
-  {/* PROJECTS */}
-  <section id="projects" className="w-full scroll-mt-24">
-    <ProjectsPage />
-  </section>
+  { node: <FaNodeJs />, title: "Node.js", href: "https://nodejs.org" },
+  { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
+  { node: <SiAppwrite />, title: "Appwrite", href: "https://appwrite.io" },
+  { node: <SiFirebase />, title: "Firebase", href: "https://firebase.google.com" }, 
+    { node: <FaWordpress />, title: "WordPress", href: "https://wordpress.org" },
+    { node: <FaHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+    { node: <FaCss3Alt />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    { node: <FaJs />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { node: <FaGitAlt />, title: "Git", href: "https://git-scm.com" },
+    { node: <FaAndroid />, title: "Android", href: "https://developer.android.com" },
+];
 
-        </>
-    )
+export default function SecondPage() {
+  return (
+    <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}} className='pt-20'>
+      {/* Basic horizontal loop */}
+      <LogoLoop
+        logos={techLogos}
+        speed={100}
+        direction="left"
+        logoHeight={60}
+        gap={60}
+        hoverSpeed={0}
+        fadeOutColor='none'
+/>
+    </div>
+  );
 }

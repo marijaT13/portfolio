@@ -27,7 +27,7 @@ export default function FirstPage() {
                 <br/>
                 My love for coding lies in Frontend Development where I can express my style and creativity. 
                 <br/>
-                Inbetween my classes and tests, I undertook projects on my own,
+                Inbetween my classes and tests, I undertook projects of my own,
                 which allowed me to apply theoretical knowledge into practical applications and hardcode 
                 all that I have learned.
                 <br/>
@@ -42,7 +42,8 @@ export default function FirstPage() {
           <Card className="bg-transparent shadow-2xl w-full dark:bg-neutral-700/50">
             <CardHeader>
               <p className="font-sans text-center font-bold text-gray-800 dark:text-gray-300 mb-2">
-                When I&apos;m not traveling, you can find me learning new skills
+                In my free time I travel, and when I travel, I gather inspiration and skills.
+                When I&apos;m not traveling, I gather new skills
                 online!
               </p>
             </CardHeader>
