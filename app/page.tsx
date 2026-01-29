@@ -128,7 +128,7 @@ if (!mounted) {
                     aria-label="Scroll To Top"
                   >
                     <img
-                    src="./assets/images/favicon-1.png"
+                    src="./assets/images/favicon-2.png"
                     alt="Your Company"
                     className="h-8 w-auto"
                   />
