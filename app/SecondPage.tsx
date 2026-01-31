@@ -1,6 +1,6 @@
 import LogoLoop from '@/components/ui/LogoLoop';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
-import { FaNodeJs, FaWordpress, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaAndroid } from 'react-icons/fa';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiMysql } from 'react-icons/si';
+import { FaNodeJs, FaWordpress, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaAndroid, FaPython } from 'react-icons/fa';
 import { SiMongodb, SiAppwrite, SiFirebase } from 'react-icons/si';
  import ProjectsPage from './ProjectsPage';
 
@@ -16,8 +16,8 @@ const techLogos = [
   { node: <SiAppwrite />, title: "Appwrite", href: "https://appwrite.io" },
   { node: <SiFirebase />, title: "Firebase", href: "https://firebase.google.com" }, 
     { node: <FaWordpress />, title: "WordPress", href: "https://wordpress.org" },
-    { node: <FaHtml5 />, title: "HTML5", href: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-    { node: <FaCss3Alt />, title: "CSS3", href: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+    { node: <FaPython />, title: "Python", href: "https://www.python.org/" },
+    { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com/" },
     { node: <FaJs />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
     { node: <FaGitAlt />, title: "Git", href: "https://git-scm.com" },
     { node: <FaAndroid />, title: "Android", href: "https://developer.android.com" },

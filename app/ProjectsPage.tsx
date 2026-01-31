@@ -1,6 +1,7 @@
  'use client'
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import OutroPage from "./OutroPage";
 
 type Frame = {
   title: string;
@@ -224,6 +225,9 @@ export default function Gallery() {
           </div>
         </div>
       </div>
+      <section id="projects" className="w-full scroll-mt-24">
+        <OutroPage/>
+        </section>
     </>
   );
 }
