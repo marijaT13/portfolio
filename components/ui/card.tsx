@@ -126,7 +126,7 @@ const CardItemTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("font-medium leading-none", className)}
+    className={cn("font-medium leading-none overflow-wrap", className)}
     {...props}
   />
 ))
@@ -138,7 +138,7 @@ const CardItemSubtitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("text-sm text-muted-foreground overflow-wrap", className)}
     {...props}
   />
 ))
@@ -151,7 +151,7 @@ const CardItemMeta = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-sm text-muted-foreground whitespace-nowrap", className)}
+    className={cn("text-sm text-muted-foreground overflow-wrap", className)}
     {...props}
   />
 ))

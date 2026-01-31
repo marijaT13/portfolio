@@ -2,7 +2,7 @@ import LogoLoop from '@/components/ui/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { FaNodeJs, FaWordpress, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaAndroid } from 'react-icons/fa';
 import { SiMongodb, SiAppwrite, SiFirebase } from 'react-icons/si';
-//  import ProjectsPage from './ProjectsPage';
+ import ProjectsPage from './ProjectsPage';
 
 // Alternative with image sources
 const techLogos = [
@@ -40,9 +40,9 @@ export default function SecondPage() {
     />
     
     </div>
-      {/* <section id="projects" className="w-full scroll-mt-24">
+      <section id="projects" className="w-full scroll-mt-24">
         <ProjectsPage/>
-        </section> */}
+        </section>
         </>
   );
 }
