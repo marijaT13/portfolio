@@ -225,7 +225,7 @@ export default function Gallery() {
           </div>
         </div>
       </div>
-      <section id="projects" className="w-full scroll-mt-24">
+      <section id="contact" className="w-full scroll-mt-24">
         <OutroPage/>
         </section>
     </>
