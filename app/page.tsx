@@ -126,7 +126,6 @@ if (!mounted) {
                   
                   <button
                     onClick={scrollToTop}
-                    
                     className="mr-3 cursor-pointer"
                     aria-label="Scroll To Top"
                   >
@@ -244,28 +243,7 @@ if (!mounted) {
 
   
       </div>
-      {showScrollTop && (
-  <button
-    onClick={scrollToTop}
-    className="
-    fixed 
-    bottom-6 
-    right-6 
-    bg-red-800 
-    text-white 
-    p-3 
-    rounded-full 
-    shadow-lg 
-    hover:bg-red-700 
-    transition-all z-50"
-    aria-label="Scroll To Top"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18" />
-  </svg>
-
-  </button>
-)}
+    
   </main> 
 </>
  );

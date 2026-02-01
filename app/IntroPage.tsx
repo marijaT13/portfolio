@@ -1,16 +1,4 @@
 'use client'
-import { Button } from "@/components/ui/button"
-import {
-  Card,
- 
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import Image from "next/image"
-
 import FirstPage from "./FirstPage";
 import { useEffect, useState } from "react";
 import GlareOverlay from "@/components/GlareHover";
@@ -32,7 +20,7 @@ useEffect(() => {
 }, [index, fullText]);
 return(
   <>  
-<div className="px-4 sm:px-8 lg:px-12 flex flex-col md:flex-row items-start gap-10 lg:gap-50 pb-70 pt-40">
+<div className="px-4 sm:px-8 lg:px-12 flex flex-col md:flex-row items-start gap-10 lg:gap-52 pb-70 pt-40">
 
 
   {/* WELCOME — always rendered, just flows naturally */}
@@ -52,6 +40,7 @@ return(
 
   {/* DESKTOP CARD */}
 <div className="
+hidden md:block
   w-full
   max-w-md
   mx-auto
