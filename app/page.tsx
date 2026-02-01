@@ -76,9 +76,9 @@ if (!mounted) {
     <>
     <ClickSpark />
 
-  <main className="flex flex-col items-center justify-center min-h-screen overflow-x-hidden">
+<main className="overflow-x-hidden flex flex-col items-center pt-24">
      {/* navbar */}
-    <div className="fixed top-0 z-50 pt-1.25">
+    <div className="fixed top-0 z-50 pt-2">
       <Disclosure as="nav" className="relative">
       {({ open }) => (
         <>
@@ -184,17 +184,8 @@ if (!mounted) {
           </div>
           {/* MOBILE MENU PANEL */}
           <DisclosurePanel className="sm:hidden mt-2">
-            <div
-              className="
-                mx-auto max-w-7xl
-                rounded-xl
-                bg-white dark:bg-gray-900
-                border border-gray-200 dark:border-gray-700
-                shadow-sm
-                px-4 py-3
-                space-y-1
-              "
-            >
+            <div className="w-full max-w-7xl px-6 lg:px-12 flex flex-col">
+
               {navigation.map((item) => (
                 <DisclosureButton
                   key={item.name}
@@ -243,7 +234,7 @@ if (!mounted) {
       </Disclosure>
     </div>
     
-    <div className="w-full max-w-300 flex flex-col items-center justify-center p-6 space-y-4">
+<div className="w-full max-w-7xl px-6 lg:px-12 flex flex-col space-y-8">
       {/* IntroPage Section */}
       
   {/* INTRO */}

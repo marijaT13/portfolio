@@ -76,7 +76,8 @@ export default function OutroPage() {
     }
   };
 
-  return (<div className="min-h-screen flex flex-col">
+  return (
+  <div className="min-h-fulls flex flex-col">
   {/* MAIN CONTENT */}
   <main className="flex-1 px-8 pt-24 pb-12">
     {/* Header */}
@@ -120,7 +121,7 @@ export default function OutroPage() {
   </main>
 
   {/* FOOTER */}
-  <footer className="shrink-0 pt-6">
+<footer className="mt-20 mb-8">
     <CurvedLoop
       marqueeText= {`© ${new Date().getFullYear()} ✧ Marija Tashevska ✧ All rights reserved. ✧`}
       speed={2}
