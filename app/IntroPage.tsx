@@ -13,6 +13,7 @@ import Image from "next/image"
 
 import FirstPage from "./FirstPage";
 import { useEffect, useState } from "react";
+import GlareOverlay from "@/components/GlareHover";
 
 export default function IntroPage(){
   const fullText = "Welcome to my portfolio";
@@ -33,6 +34,7 @@ return(
   <>  
 <div className="min-h-screen px-4 sm:px-8 md:px-12 flex flex-col md:flex-row md:items-center gap-10 md:gap-20 py-20 md:py-40">
 
+
   {/* WELCOME — always rendered, just flows naturally */}
   <div className="flex-1 max-w-xl">
     <h1 className="text-7xl sm:text-7xl md:text-6xl pt-30 pb-0 mb-0 md:pt-0 sm:pt-20 font-bold text-gray-900 dark:text-white leading-tight">
@@ -42,7 +44,8 @@ return(
   </div>
 
   {/* DESKTOP CARD */}
-  <div className="hidden md:block max-w-md bg-neutral-primary-soft p-6 rounded-md shadow-2xl dark:bg-neutral-700/50 pb-10">
+<div className="hidden md:block relative max-w-md bg-neutral-primary-soft p-6 rounded-md shadow-2xl dark:bg-neutral-700/50 pb-10 overflow-hidden">
+      <GlareOverlay glareOpacity={0.12} playOnce />
     <img
       src="./assets/images/intropageprofile2.png"
       alt="Profile Picture"

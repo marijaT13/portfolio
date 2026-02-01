@@ -1,5 +1,6 @@
 'use client'
 import CurvedLoop from '@/components/CurvedLoop';
+import GlareHover from '@/components/GlareHover';
 import {FaEnvelope, FaLinkedin, FaGlobe, FaGithub, FaDev } from 'react-icons/fa'
 <CurvedLoop marqueeText="Welcome to React Bits ✦" />
 
@@ -90,15 +91,16 @@ export default function OutroPage() {
     </div>
 
     {/* Cards */}
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className=" grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item, i) => (
         <a
           key={i}
           href={getHref(item)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-4 bg-transparent border p-6 rounded-2xl shadow-xl hover:shadow-md hover:scale-[1.02] transition"
+          className="flex items-center gap-4 bg-transparent border p-6 rounded-2xl shadow-xl hover:shadow-md hover:scale-[1.02] transition overflow-hidden"
         >
+          <GlareHover/>
           <div className="bg-gray-200 p-4 rounded-xl text-gray-700 shrink-0">
             {item.icon}
           </div>
@@ -111,6 +113,7 @@ export default function OutroPage() {
               {item.value}
             </p>
           </div>
+          
         </a>
       ))}
     </div>
