@@ -73,13 +73,8 @@ if (!mounted) {
   return null;
 }
   return (
-<ClickSpark
-  sparkColor='#535758'
-  sparkSize={11}
-  sparkRadius={40}
-  sparkCount={11}
-  duration={400}
->
+    <>
+    <ClickSpark />
 
   <main className="flex flex-col items-center justify-center min-h-screen overflow-x-hidden">
      {/* navbar */}
@@ -281,6 +276,6 @@ if (!mounted) {
   </button>
 )}
   </main> 
-  </ClickSpark>
+</>
  );
 } 
