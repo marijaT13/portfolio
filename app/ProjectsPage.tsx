@@ -70,7 +70,7 @@ const frames: Frame[] = [
           Zustand for 3D model integration and smooth interactions.<br/>
           The goal was to understand how professional websites achieve seamless animations, 
           efficient performance, and a polished user experience.
-           <Link href="https://www.figma.com/design/kbkr3EpE0c75L2BvhKmiNR/apple.com?node-id=0-1&t=PQAkautrObGb0qEV-1" target="_blank" className="text-blue-600 underline">
+           <Link href="https://www.figma.com/design/kbkr3EpE0c75L2BvhKmiNR/apple.com?node-id=0-1&t=PQAkautrObGb0qEV-1" target="_blank" className="text-blue-600 dark:text-blue-300 underline">
             <br/>Check out the Figma design
           </Link>  
         </> 
