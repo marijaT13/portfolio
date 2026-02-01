@@ -11,7 +11,7 @@ export default function FirstPage() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-16 px-6 sm:px-10 py-10">
+      <div className="flex flex-col items-center justify-center gap-16 px-6 sm:px-10 py-10 overflow-x-hidden">
         {/* EDUCATION CARD */}
         <div className="flex flex-col sm:flex-row justify-center items-stretch gap-12 w-full max-w-6xl">
       <Card className="bg-transparent shadow-2xl w-full md:w-1/2 dark:bg-neutral-700/50">    
@@ -76,37 +76,40 @@ export default function FirstPage() {
 
         <CardContent>
         <CardList>
-        <CardItem>
+        <CardItem className="flex flex-wrap gap-3 sm:flex-nowrap">
         <CardItemLeft>
-        <CardIcon className="bg-white">
+        <CardIcon className="bg-white shrink-0 w-10 h-10 sm:w-12 sm:h-12">
           <img
           src={'/assets/images/fiktlogo.png'}
+          className="w-full h-full object-contain rounded-full"
           />
         </CardIcon>
-        <CardItemText>
+        <CardItemText className="min-w-0 break-words">
+
         <CardItemTitle>FICT</CardItemTitle>
         <CardItemSubtitle className="dark:text-gray-300">BSs - Computer Science</CardItemSubtitle>
         <CardItemSubtitle className="dark:text-gray-300">Bitola, Macedonia</CardItemSubtitle>
         </CardItemText>
         </CardItemLeft>
-        <CardItemMeta className="dark:text-gray-300">10.2021 - 09.2025</CardItemMeta>
+        <CardItemMeta className="dark:text-gray-300 text-sm break-words sm:whitespace-nowrap">10.2021 - 09.2025</CardItemMeta>
         </CardItem>
 
 
-        <CardItem>
+        <CardItem className="flex flex-wrap gap-3 sm:flex-nowrap">
         <CardItemLeft>
-        <CardIcon className="bg-white">
+        <CardIcon className="bg-white shrink-0 w-10 h-10 sm:w-12 sm:h-12">
           <img
           src={'/assets/images/jbt.png'}
+          className="w-full h-full object-contain rounded-full"
           />
         </CardIcon>
-        <CardItemText>
+        <CardItemText className="min-w-0 break-words">
         <CardItemTitle>Gymnasium Josip Broz Tito</CardItemTitle>
         <CardItemSubtitle className="dark:text-gray-300">Natural Sciences and Mathematics field - Combination A</CardItemSubtitle>
         <CardItemSubtitle className="dark:text-gray-300">Bitola, Macedonia</CardItemSubtitle>
         </CardItemText>
         </CardItemLeft>
-        <CardItemMeta className="dark:text-gray-300">09.2017 - 06.2021</CardItemMeta>
+        <CardItemMeta className="dark:text-gray-300 text-sm break-words sm:whitespace-nowrap">09.2017 - 06.2021</CardItemMeta>
         </CardItem>
         </CardList>
         </CardContent>
@@ -120,21 +123,22 @@ export default function FirstPage() {
 
         <CardContent>
         <CardList>
-        <CardItem>
+        <CardItem className="flex flex-wrap gap-3 sm:flex-nowrap">
+
         <CardItemLeft>
-        <CardIcon className="bg-white ">
+        <CardIcon className="bg-white shrink-0 w-10 h-10 sm:w-12 sm:h-12">
           <img
           src={'/assets/images/softwareyard.jpg'}
-        style={{ width: '100%', height: '100%', borderRadius: '50%' }}
+          className="w-full h-full object-contain rounded-full"
           />
         </CardIcon>
-        <CardItemText>
+        <CardItemText className="min-w-0 break-words">
         <CardItemTitle>Software Yard</CardItemTitle>
         <CardItemSubtitle className="dark:text-gray-300">QA Tester Internship</CardItemSubtitle>
         <CardItemSubtitle className="dark:text-gray-300">Bitola, Macedonia</CardItemSubtitle>
         </CardItemText>
         </CardItemLeft>
-        <CardItemMeta className="dark:text-gray-300">01.2026 - now</CardItemMeta>
+        <CardItemMeta className="dark:text-gray-300 text-sm break-words sm:whitespace-nowrap">01.2026 - now</CardItemMeta>
         </CardItem>
         </CardList>
         </CardContent>
@@ -202,7 +206,7 @@ function CertificateItem({
         className={`flex flex-col items-center justify-center text-center cursor-pointer transition-transform ${
           progress === 1 ? "hover:scale-105" : ""
         }`}
-      ><div className="relative w-28 h-28 flex items-center justify-center">
+      ><div className="relative w-[22vw] max-w-[112px] aspect-square items-center justify-center">
     {/* Progress Circle */}
     <svg
       className="absolute inset-0 w-full h-full -rotate-90"

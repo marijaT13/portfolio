@@ -137,8 +137,11 @@ export default function Gallery() {
 
       <div
       ref={containerRef}
-      className="gallery w-full max-w-4xl mx-auto my-6 rounded border dark:bg-neutral-700/50 bg-transparent shadow-2xl"
-    >
+className="gallery w-full max-w-4xl mx-auto my-6
+             min-h-[460px]
+             flex flex-col justify-center
+             rounded border
+             dark:bg-neutral-700/50 bg-transparent shadow-2xl"    >
         {/* top bar */}
         <div className="top flex p-2 border-b select-none items-center">
         
@@ -188,10 +191,10 @@ export default function Gallery() {
         </div>
 
         {/* content */}
-         <div className="content-area w-full h-[28rem] overflow-hidden">
+         <div className="content-area w-full flex items-center h-auto overflow-hidden">
         <div
           ref={platformRef}
-          className="platform h-full flex transition-transform duration-300 ease-out"
+          className="platform items-center flex transition-transform duration-300 ease-out"
           style={{
             transform: `translateX(-${index * slideWidth}px)`,
           }}
@@ -199,22 +202,24 @@ export default function Gallery() {
           {frames.map((frame) => (
             <div
               key={frame.title}
-              className="each-frame flex-none h-full"
+              className="each-frame flex-none h-full items-center justify-center"
               style={{ width: slideWidth }}
             >
               <div className="main flex flex-col md:flex-row w-full h-full p-4 md:p-8 gap-4">
                 {/* Image */}
-                <div className="sub w-full md:w-4/6 my-auto">
+                <div className="sub w-full md:w-4/6 flex items-center justify-center">
+                <div className="w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
                   <img
                     src={frame.image}
                     alt={frame.title}
-                    className="w-full max-h-64 md:max-h-none object-contain mx-auto"
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
+              </div>
 
                 {/* Text */}
-                <div className="sub w-full my-auto">
-                  <div className="long-text text-base md:text-lg">
+                <div className="sub w-full flex items-center">
+                  <div className="long-text text-base md:text-lg leading-relaxed">
                     {frame.description}
                   </div>
 
