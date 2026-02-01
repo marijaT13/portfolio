@@ -1,5 +1,7 @@
 'use client'
+import CurvedLoop from '@/components/CurvedLoop';
 import {FaEnvelope, FaLinkedin, FaGlobe, FaGithub, FaDev } from 'react-icons/fa'
+<CurvedLoop marqueeText="Welcome to React Bits ✦" />
 
 type ContactType = 
  | "email"
@@ -73,42 +75,58 @@ export default function OutroPage() {
     }
   };
 
-  return (
-    <div className="min-h-screen p-8 pt-30">
-      <div className=" p-10 rounded-2xl text-gray-800 dark:text-gray-200 text-left mb-10 text-shadow-2xs">
-        <h2 className="text-4xl md:text-5xl font-bold mb-3">
-          Contacts
+  return (<div className="min-h-screen flex flex-col">
+  {/* MAIN CONTENT */}
+  <main className="flex-1 px-8 pt-24 pb-12">
+    {/* Header */}
+    <div className="p-10 rounded-2xl text-gray-800 dark:text-gray-200 text-left mb-10 text-shadow-2xs">
+      <h2 className="text-4xl md:text-5xl font-bold mb-3">
+        Contacts
       </h2>
 
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-200 ">
-          Choose where and say Hi👋🏻
-         </p>
-      </div>
-      
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, i) => (
-          <a
-            key={i}
-            href={getHref(item)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 bg-transparent border-1 p-6 rounded-2xl shadow-xl hover:shadow-md hover:scale-[1.02] transition cursor-pointer"
-          >
-            <div className="bg-gray-200 p-4 rounded-xl text-gray-700">
-              {item.icon}
-            </div>
-
-            <div>
-              <p className="text-xs tracking-widest text-gray-500 dark:text-white/90">
-                {item.label}
-              </p>
-              <p className="font-semibold text-gray-900 dark:text-white break-all">
-                {item.value}
-              </p>
-            </div>
-          </a>
-        ))}
-      </div>
+      <p className="text-lg md:text-xl text-gray-600 dark:text-gray-200">
+        Choose where and say Hi 👋🏻
+      </p>
     </div>
-  );
+
+    {/* Cards */}
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((item, i) => (
+        <a
+          key={i}
+          href={getHref(item)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-4 bg-transparent border p-6 rounded-2xl shadow-xl hover:shadow-md hover:scale-[1.02] transition"
+        >
+          <div className="bg-gray-200 p-4 rounded-xl text-gray-700 shrink-0">
+            {item.icon}
+          </div>
+
+          <div className="min-w-0">
+            <p className="text-xs tracking-widest text-gray-500 dark:text-white/90">
+              {item.label}
+            </p>
+            <p className="font-semibold text-gray-900 dark:text-white break-all">
+              {item.value}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+
+  {/* FOOTER */}
+  <footer className="shrink-0 pt-6">
+    <CurvedLoop
+      marqueeText= {`© ${new Date().getFullYear()} ✧ Marija Tashevska ✧ All rights reserved. ✧`}
+      speed={2}
+      curveAmount={-220}
+      direction="right"
+      interactive={false}
+      className="custom-text-style"
+    />
+  </footer>
+</div>
+  )
 }
