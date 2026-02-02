@@ -19,12 +19,13 @@ useEffect(() => {
 }, [index, fullText]);
 return(
   <>  
-<div className="px-4 sm:px-8 lg:px-12 flex flex-col md:flex-row items-start gap-10 lg:gap-52 pb-70 pt-40">
+<div className="px-4 sm:px-8 lg:px-12 flex flex-col md:flex-row items-start gap-10 lg:gap-52 pb-50 pt-5 md:pt-35">
 
   {/* WELCOME — always rendered, just flows naturally */}
   <div className="flex-1 max-w-xl">
 <h1 className="
-  text-5xl
+  text-center md:text-left sm:text-center
+  text-4xl
   sm:text-6xl
   lg:text-7xl
   font-bold
