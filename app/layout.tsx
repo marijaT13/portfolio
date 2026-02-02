@@ -14,9 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marija Tashevska",
-  description: "My personal portfolio.",
-
+  title: "Marija Tashevska | Software Engineer",
+  description: "Personal website showcasing my projects, skills, and experience.",
+  openGraph: {
+    title: "Marija Tashevska | Software Engineer",
+    description: "Personal website showcasing my projects, skills, and experience.",
+    url: "https://marijatashevska.xyz",
+    siteName: "Marija Tashevska",
+    images: [
+      {
+        url: "https://marijatashevska.xyz/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Marija Tashevska | Software Engineer",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
