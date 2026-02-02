@@ -26,12 +26,7 @@ export default function OutroPage() {
       value: "marija.tashevska222@gmail.com",
       icon: <FaEnvelope size={20} />,
     },
-    {
-      type: "website",
-      label: "WEBSITE",
-      value: "marias-portfolio.vercel.app",
-      icon: <FaGlobe size={20} />,
-    },
+
     {
       type: "linkedin",
       label: "LINKEDIN",
@@ -57,10 +52,7 @@ export default function OutroPage() {
     switch (item.type) {
       case "email":
         return `mailto:${item.value}`;
-
-      case "website":
-        return `https://${item.value}`;
-
+        
       case "linkedin":
         return `https://linkedin.com/${item.value}`;
 

@@ -67,8 +67,24 @@ export default function Home() {
       }, []);
 
       const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        };
+      // Smooth scroll
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      // Remove hash from URL WITHOUT reload
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname);
+      }
+    };
+    useEffect(() => {
+      if (typeof window === "undefined") return;
+        if("scrollRestoration" in history){
+          history.scrollRestoration="manual";
+        }
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname);
+      }
+      window.scrollTo({top:0, behavior:"auto"});
+    }, []);
 
 if (!mounted) {
   return null;
@@ -128,12 +144,18 @@ if (!mounted) {
                   
                   <button
                     onClick={scrollToTop}
-                    className="mr-3 cursor-pointer"
+                    className="
+                      mr-3 cursor-pointer
+                      transition-transform
+                      hover:scale-105
+                      active:scale-95
+                    "
                     aria-label="Scroll To Top"
                   >
                     <img
                     src="./assets/images/favicon-2.png"
                     alt="Your Company"
+                    draggable={false}
                     className="h-8 w-auto"
                   />
                   </button>
