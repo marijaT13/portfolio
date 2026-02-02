@@ -1,7 +1,6 @@
 'use client'
 import FirstPage from "./FirstPage";
 import { useEffect, useState } from "react";
-import GlareOverlay from "@/components/GlareHover";
 
 export default function IntroPage(){
   const fullText = "Welcome to my portfolio";
@@ -22,7 +21,6 @@ return(
   <>  
 <div className="px-4 sm:px-8 lg:px-12 flex flex-col md:flex-row items-start gap-10 lg:gap-52 pb-70 pt-40">
 
-
   {/* WELCOME — always rendered, just flows naturally */}
   <div className="flex-1 max-w-xl">
 <h1 className="
@@ -41,6 +39,7 @@ return(
   {/* DESKTOP CARD */}
 <div className="
 hidden md:block
+relative
   w-full
   max-w-md
   mx-auto
@@ -52,7 +51,6 @@ hidden md:block
   dark:bg-neutral-700/50
   overflow-hidden
 ">
-  <GlareOverlay glareOpacity={0.12} playOnce />
 
   <img
     src="./assets/images/intropageprofile2.png"
@@ -76,6 +74,7 @@ hidden md:block
 
   {/* MOBILE CARD — SEPARATE, BELOW WELCOME */}
   <div className="md:hidden w-full max-w-md mx-auto bg-neutral-primary-soft rounded-lg shadow-xl dark:bg-neutral-700/50 p-4">
+
     <img
       src="./assets/images/intropageprofile2.png"
       alt="Profile Picture"

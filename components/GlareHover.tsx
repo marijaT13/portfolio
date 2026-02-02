@@ -1,61 +1,71 @@
+'use client';
+
 import React, { useEffect, useRef } from "react";
 
 interface GlareOverlayProps {
- children?: React.ReactNode;
+  fullscreen?: boolean;
   glareColor?: string;
   glareOpacity?: number;
   glareAngle?: number;
   glareSize?: number;
   transitionDuration?: number;
   playOnce?: boolean;
-  className?: string;
 }
 
 export default function GlareOverlay({
-    children,
-  glareColor = '#ffffff',
+  fullscreen = false,
+  glareColor = "#ffffff",
   glareOpacity = 0.15,
   glareAngle = -45,
   glareSize = 180,
   transitionDuration = 700,
   playOnce = false,
-  className = '',
 }: GlareOverlayProps) {
-const overlayRef = useRef<HTMLDivElement>(null);
-useEffect(() => {
-  if (!playOnce) return;
+  const overlayRef = useRef<HTMLDivElement>(null);
 
-  const el = overlayRef.current;
-  if (!el) return;
-
-  // start from offscreen
-  el.style.backgroundPosition = '-100% -100%, 0 0';
-
-  // trigger animation next frame
-  requestAnimationFrame(() => {
-    el.style.transition = `${transitionDuration}ms ease`;
-    el.style.backgroundPosition = '100% 100%, 0 0';
-  });
-}, [playOnce, transitionDuration]);
-
-
-  useEffect(() => {
-    const overlay = overlayRef.current;
-    const parent = overlay?.parentElement;
-    if (!overlay || !parent) return;
-
+  // 🔧 shared gradient setup (used by both modes)
+  const setupGradient = (el: HTMLDivElement) => {
     const hex = glareColor.replace("#", "");
     const r = parseInt(hex.slice(0, 2), 16);
     const g = parseInt(hex.slice(2, 4), 16);
     const b = parseInt(hex.slice(4, 6), 16);
     const rgba = `rgba(${r}, ${g}, ${b}, ${glareOpacity})`;
 
-    overlay.style.background = `linear-gradient(${glareAngle}deg,
+    el.style.background = `linear-gradient(${glareAngle}deg,
       transparent 60%,
       ${rgba} 70%,
       transparent 100%)`;
-    overlay.style.backgroundSize = `${glareSize}% ${glareSize}%`;
-    overlay.style.backgroundRepeat = "no-repeat";
+
+    el.style.backgroundSize = `${glareSize}% ${glareSize}%`;
+    el.style.backgroundRepeat = "no-repeat";
+  };
+
+  // ▶️ PLAY ONCE (page load / refresh)
+  useEffect(() => {
+    if (!playOnce) return;
+
+    const el = overlayRef.current;
+    if (!el) return;
+
+    setupGradient(el);
+
+    el.style.backgroundPosition = "-120% -120%";
+
+    requestAnimationFrame(() => {
+      el.style.transition = `${transitionDuration}ms ease`;
+      el.style.backgroundPosition = "120% 120%";
+    });
+  }, [playOnce, transitionDuration]);
+
+  // 🖱️ HOVER MODE (disabled when playOnce = true)
+  useEffect(() => {
+    if (playOnce) return;
+
+    const overlay = overlayRef.current;
+    const parent = overlay?.parentElement;
+    if (!overlay || !parent) return;
+
+    setupGradient(overlay);
     overlay.style.backgroundPosition = "-120% -120%";
 
     const reset = () => {
@@ -70,29 +80,24 @@ useEffect(() => {
       overlay.style.backgroundPosition = "120% 120%";
     };
 
-    const onLeave = () => {
-      reset(); // 🔥 instant kill — no ghost animation
-    };
-
     parent.addEventListener("mouseenter", onEnter);
-    parent.addEventListener("mouseleave", onLeave);
+    parent.addEventListener("mouseleave", reset);
 
     return () => {
       parent.removeEventListener("mouseenter", onEnter);
-      parent.removeEventListener("mouseleave", onLeave);
+      parent.removeEventListener("mouseleave", reset);
     };
-  }, []);
+  }, [playOnce, transitionDuration]);
 
   return (
     <div
       ref={overlayRef}
       aria-hidden
       style={{
-        position: "absolute",
+        position: fullscreen ? "fixed" : "absolute",
         inset: 0,
         pointerEvents: "none",
-        borderRadius: "inherit",
-        overflow: "hidden",
+        zIndex: fullscreen ? 9999 : undefined,
       }}
     />
   );

@@ -9,6 +9,7 @@ import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import ClickSpark from "@/components/ClickSpark";
+import GlareOverlay from "@/components/GlareHover";
 
 const navigation = [
   { name: 'About', href: '#about', current: false },
@@ -74,8 +75,9 @@ if (!mounted) {
 }
   return (
     <>
+      <GlareOverlay playOnce fullscreen />
     <ClickSpark />
-
+ 
 <main className="overflow-x-hidden flex flex-col items-center pt-24">
      {/* navbar */}
     <div className="fixed top-0 z-50 pt-2">
@@ -182,8 +184,11 @@ if (!mounted) {
             </div>
           </div>
           {/* MOBILE MENU PANEL */}
-          <DisclosurePanel className="sm:hidden mt-2">
-            <div className="w-full max-w-7xl px-6 lg:px-12 flex flex-col">
+          <DisclosurePanel className="  sm:hidden mt-2
+    transition duration-200 ease-out
+    data-[closed]:opacity-0
+    data-[closed]:scale-95">
+            <div className="w-full max-w-4xl p-6 lg:px-12 flex flex-col bg-white/90 dark:bg-gray-800/90 rounded-2xl gap-2">
 
               {navigation.map((item) => (
                 <DisclosureButton
@@ -193,7 +198,7 @@ if (!mounted) {
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     item.current
-                      ? "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"
+                      ? "bg-gray-100 dark:bg-gray-800/90 text-gray-900 dark:text-white"
                       : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 hover:text-gray-900 dark:hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium transition-colors"
                   )}
