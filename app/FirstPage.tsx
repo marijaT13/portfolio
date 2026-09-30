@@ -1,8 +1,9 @@
 import { Card, CardHeader, CardTitle, CardContent, CardItemMeta, CardList, CardItemLeft, CardItemText, CardItemSubtitle, CardItemTitle, CardIcon, CardItem } from "@/components/ui/card";
+import Link from "next/link";
 import SecondPage from "./SecondPage";
 import { useEffect, useRef, useState } from "react";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
-import {HiCode} from "react-icons/hi";
+import {HiCode, HiExternalLink} from "react-icons/hi";
 
 export default function FirstPage() {
   // Helper constants for cleaner math
@@ -15,26 +16,26 @@ export default function FirstPage() {
         {/* EDUCATION CARD */}
         <div className="flex flex-col sm:flex-row justify-center items-stretch gap-12 w-full max-w-6xl">
       <Card className="bg-transparent shadow-2xl w-full md:w-1/2 dark:bg-neutral-700/50">    
-            <CardContent className="font-sans text-left text-gray-800 leading-relaxed pt-10">
-              <p className="dark:text-gray-200">
-                A freshly graduated software engineer who is learning how to make an
-                impact in the tech world.
-                <br/>
-                Through my academic years, I gained hands-on
-                experience and guidance how to design, develop and implement 
-                software solutions using various programming languages and technologies.
-                <br/>
-                My love for coding lies in Frontend Development where I can express my style and creativity. 
-                <br/>
-                Inbetween my classes and tests, I undertook projects of my own,
-                which allowed me to apply theoretical knowledge into practical applications and hardcode 
-                all that I have learned.
-                <br/>
-                <br/>
-                Now, I&apos;m  looking for opportunities to further enhance my skills, contribute to
-                real-world projects and add my sugar, spice and everything nice to the looks of the world wide web. 
-              </p>
-            </CardContent>
+        <CardContent className="font-sans text-left text-gray-800 leading-relaxed pt-10">
+          <p className="dark:text-gray-200">
+            Frontend developer at Software Yard, building user-facing features for
+            live sports and gaming products with Next.js, React and TypeScript.
+            <br />
+            <br />
+            I graduated in Computer Science from FICT, where I learned how to design,
+            develop and ship software. My favourite part has always been the frontend,
+            where I get to bring style and creativity into the code.
+            <br />
+            <br />
+            Alongside feature work, I write automated tests in Python and Selenium,
+            so I care about how things look <em>and</em> about keeping them from breaking.
+            <br />
+            <br />
+            Now I&apos;m growing my skills on real-world projects and working towards
+            becoming a full-stack developer, while still adding my sugar, spice and
+            everything nice to the looks of the world wide web.
+          </p>
+        </CardContent>
           </Card>
 
           {/* CERTIFICATES CARD */}
@@ -58,10 +59,13 @@ export default function FirstPage() {
 
               {/* Certificate 2 */}
               <CertificateItem
-                progress={0.18}
+                progress={1}
                 label="Full-Stack Web Development Bootcamp – Udemy"
 
               />
+              <CertificateItem
+                progress={0.1}
+                label="100 Days of Code: The Complete Python Pro Bootcamp — Udemy" />
             </CardContent>
           </Card>
         </div>
@@ -124,7 +128,6 @@ export default function FirstPage() {
         <CardContent>
         <CardList>
         <CardItem className="flex flex-wrap gap-3 sm:flex-nowrap">
-
         <CardItemLeft>
         <CardIcon className="bg-white shrink-0 w-10 h-10 sm:w-12 sm:h-12">
           <img
@@ -138,8 +141,39 @@ export default function FirstPage() {
         <CardItemSubtitle className="dark:text-gray-300">Bitola, Macedonia</CardItemSubtitle>
         </CardItemText>
         </CardItemLeft>
-        <CardItemMeta className="dark:text-gray-300 text-sm break-words sm:whitespace-nowrap">01.2026 - now</CardItemMeta>
+        <CardItemMeta className="dark:text-gray-300 text-sm break-words sm:whitespace-nowrap">01.2026 - 03.2026</CardItemMeta>
         </CardItem>
+        <CardItem className="flex flex-wrap gap-3 sm:flex-nowrap">
+        <CardItemLeft>
+          <CardIcon className="bg-white shrink-0 w-10 h-10 sm:w-12 sm:h-12">
+            <img
+              src={'/assets/images/softwareyard.jpg'}
+              alt="Software Yard logo"
+              className="w-full h-full object-contain rounded-full"
+            />
+          </CardIcon>
+          <CardItemText className="min-w-0 break-words">
+          <CardItemTitle>Software Yard</CardItemTitle>
+          <CardItemSubtitle className="dark:text-gray-300">Frontend Developer</CardItemSubtitle>
+          <CardItemSubtitle className="dark:text-gray-300">Bitola, Macedonia</CardItemSubtitle>
+          <CardItemSubtitle>
+            <Link
+              href="https://www.thebigleagues.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-blue-500 hover:underline"
+            >
+              <HiCode className="shrink-0" />
+              Currently working on: The Big Leagues
+              <HiExternalLink className="shrink-0" />
+            </Link>
+          </CardItemSubtitle>
+        </CardItemText>
+        </CardItemLeft>
+        <CardItemMeta className="dark:text-gray-300 text-sm break-words sm:whitespace-nowrap">
+          03.2026 - now
+        </CardItemMeta>
+      </CardItem>
         </CardList>
         </CardContent>
         </Card>

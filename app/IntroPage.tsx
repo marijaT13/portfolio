@@ -54,9 +54,9 @@ relative
 ">
 
   <img
-    src="./assets/images/intropageprofile2.png"
+    src="./assets/images/portfolio_image.png"
     alt="Profile Picture"
-    className="rounded-md w-full h-auto"
+    className="rounded-md w-full h-auto "
   />
 
   <h5 className="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">
@@ -77,7 +77,7 @@ relative
   <div className="md:hidden w-full max-w-md mx-auto bg-neutral-primary-soft rounded-lg shadow-xl dark:bg-neutral-700/50 p-4">
 
     <img
-      src="./assets/images/intropageprofile2.png"
+      src="./assets/images/portfolio_image.png"
       alt="Profile Picture"
       className="w-full h-56 object-cover rounded-lg mb-4"
     />
